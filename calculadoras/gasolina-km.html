@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculadora de Gasolina por Kilómetro | Cuánto gasta tu auto</title>
+
+<meta name="description" content="Calcula cuánto gastas en gasolina por kilómetro. Herramienta gratuita para conductores, Uber, Didi y viajes.">
+
+<meta name="keywords" content="calculadora gasolina, gasto gasolina por km, costo gasolina viaje">
+
+<meta name="robots" content="index, follow">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#f6f8fb;
+color:#1f2937;
+}
+
+.nav{
+background:white;
+border-bottom:1px solid #eee;
+}
+
+.nav-container{
+max-width:1100px;
+margin:auto;
+padding:18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-weight:600;
+font-size:18px;
+}
+
+.cta-nav{
+background:#2563eb;
+color:white;
+padding:10px 16px;
+border-radius:8px;
+text-decoration:none;
+}
+
+.hero{
+text-align:center;
+padding:90px 20px;
+}
+
+.hero h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#6b7280;
+font-size:18px;
+}
+
+.calculator-section{
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+.calculator{
+background:white;
+padding:40px;
+border-radius:14px;
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+input{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+button{
+background:#2563eb;
+color:white;
+padding:14px;
+border:none;
+border-radius:8px;
+width:100%;
+cursor:pointer;
+}
+
+.resultado{
+margin-top:20px;
+text-align:center;
+}
+
+.resultado h3{
+font-size:32px;
+color:#2563eb;
+}
+
+.app{
+background:#111827;
+color:white;
+text-align:center;
+padding:70px 20px;
+margin-top:60px;
+}
+
+.btn-app{
+display:inline-block;
+margin-top:20px;
+background:#2563eb;
+padding:14px 22px;
+border-radius:8px;
+color:white;
+text-decoration:none;
+}
+
+.seo{
+max-width:800px;
+margin:auto;
+padding:60px 20px;
+line-height:1.7;
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#6b7280;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="nav">
+
+<div class="nav-container">
+
+<div class="logo">
+Control Total Conductor
+</div>
+
+<a class="cta-nav" href="#calculadora">
+Calcular gasto
+</a>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<h1>
+Calculadora de gasto de gasolina por kilómetro
+</h1>
+
+<p>
+Descubre cuánto cuesta realmente manejar tu auto.
+</p>
+
+</section>
+
+<section id="calculadora" class="calculator-section">
+
+<div class="calculator">
+
+<h2>Calcula tu gasto de gasolina</h2>
+
+<label>Precio de gasolina por litro</label>
+
+<input id="precio" type="number" placeholder="Ejemplo: 23">
+
+<label>Kilómetros recorridos</label>
+
+<input id="km" type="number" placeholder="Ejemplo: 120">
+
+<label>Litros consumidos</label>
+
+<input id="litros" type="number" placeholder="Ejemplo: 10">
+
+<button onclick="calcularGasolina()">
+
+Calcular costo por km
+
+</button>
+
+<div class="resultado">
+
+<p>Costo por kilómetro</p>
+
+<h3 id="resultado">$0</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="app">
+
+<h2>Control total de tus gastos como conductor</h2>
+
+<p>
+
+Usa la app <b>Control Total Conductor</b> para registrar gasolina, ingresos y ganancias reales.
+
+</p>
+
+<a class="btn-app" href="https://docs.google.com/forms/d/e/1FAIpQLScWlK9OJ0X5y0yKI0ZXIMJsLc8lsPyCjlfU8yRBy4n8pK0o0Q/viewform?usp=header" target="_blank">
+
+Próximamente — Regístrate aquí
+
+</a>
+
+</section>
+
+<section class="seo">
+
+<h2>Cómo calcular el gasto de gasolina</h2>
+
+<p>
+
+Calcular el gasto de gasolina por kilómetro es fundamental para conductores de aplicaciones, repartidores y cualquier persona que utilice su automóvil con frecuencia.
+
+El costo real de conducir un vehículo depende del precio del combustible, el consumo del automóvil y la distancia recorrida.
+
+Esta calculadora permite estimar de forma rápida cuánto cuesta cada kilómetro recorrido, ayudando a optimizar gastos y mejorar la rentabilidad al conducir.
+
+</p>
+
+</section>
+
+<footer>
+
+<p>
+
+Herramientas gratuitas para conductores
+
+</p>
+
+</footer>
+
+<script>
+
+function calcularGasolina(){
+
+let precio=parseFloat(document.getElementById("precio").value)||0
+let km=parseFloat(document.getElementById("km").value)||1
+let litros=parseFloat(document.getElementById("litros").value)||0
+
+let costo=(precio*litros)/km
+
+document.getElementById("resultado").innerText="$"+costo.toFixed(2)
+
+}
+
+</script>
+
+</body>
+
+</html>

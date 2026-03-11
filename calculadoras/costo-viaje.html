@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculadora de Costo de Viaje | Gasolina y gasto de viaje</title>
+
+<meta name="description" content="Calcula el costo de un viaje según gasolina, distancia y consumo del vehículo.">
+
+<meta name="keywords" content="calculadora costo viaje, gasto gasolina viaje, calcular costo viaje auto">
+
+<meta name="robots" content="index, follow">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#f6f8fb;
+color:#1f2937;
+}
+
+.nav{
+background:white;
+border-bottom:1px solid #eee;
+}
+
+.nav-container{
+max-width:1100px;
+margin:auto;
+padding:18px;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.logo{
+font-weight:600;
+font-size:20px;
+}
+
+.hero{
+text-align:center;
+padding:80px 20px;
+}
+
+.hero h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#6b7280;
+font-size:18px;
+}
+
+.calculator-section{
+max-width:800px;
+margin:auto;
+padding:20px;
+}
+
+.calculator{
+background:white;
+padding:40px;
+border-radius:14px;
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.calculator h2{
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+button{
+background:#2563eb;
+color:white;
+padding:14px;
+border:none;
+border-radius:8px;
+width:100%;
+cursor:pointer;
+font-size:16px;
+}
+
+.resultado{
+margin-top:20px;
+text-align:center;
+}
+
+.resultado h3{
+font-size:32px;
+color:#2563eb;
+}
+
+.app{
+background:#111827;
+color:white;
+text-align:center;
+padding:70px 20px;
+margin-top:60px;
+}
+
+.btn-app{
+display:inline-block;
+margin-top:20px;
+background:#2563eb;
+padding:14px 22px;
+border-radius:8px;
+color:white;
+text-decoration:none;
+}
+
+.info{
+max-width:800px;
+margin:auto;
+padding:60px 20px;
+line-height:1.7;
+}
+
+footer{
+text-align:center;
+padding:40px;
+color:#6b7280;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="nav">
+
+<div class="nav-container">
+
+<div class="logo">
+Control Total Conductor
+</div>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<h1>
+Calculadora de costo de viaje
+</h1>
+
+<p>
+Descubre cuánto cuesta realmente tu viaje en gasolina.
+</p>
+
+</section>
+
+<section class="calculator-section">
+
+<div class="calculator">
+
+<h2>Calcula el costo de tu viaje</h2>
+
+<label>Distancia del viaje (km)</label>
+
+<input id="distancia" type="number" placeholder="Ejemplo: 150">
+
+<label>Consumo del vehículo (km por litro)</label>
+
+<input id="consumo" type="number" placeholder="Ejemplo: 12">
+
+<label>Precio de gasolina por litro</label>
+
+<input id="gasolina" type="number" placeholder="Ejemplo: 23">
+
+<button onclick="calcularViaje()">
+
+Calcular costo de viaje
+
+</button>
+
+<div class="resultado">
+
+<p>Costo estimado</p>
+
+<h3 id="resultado">$0</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="app">
+
+<h2>Control total de gastos para conductores</h2>
+
+<p>
+
+La app <b>Control Total Conductor</b> te permitirá registrar gasolina, ingresos y ganancias reales.
+
+</p>
+
+<a class="btn-app" href="TU_LINK_FORMULARIO" target="_blank">
+
+Próximamente — Regístrate aquí
+
+</a>
+
+</section>
+
+<section class="info">
+
+<h2>Cómo calcular el costo de un viaje</h2>
+
+<p>
+
+El costo de un viaje depende principalmente de la distancia recorrida, el consumo del vehículo y el precio de la gasolina.
+
+Esta calculadora divide la distancia entre el rendimiento del vehículo para estimar los litros consumidos y luego calcula el costo total según el precio del combustible.
+
+</p>
+
+<p>
+
+Es una herramienta útil para planificar viajes, calcular gastos de transporte y estimar el costo real de conducir.
+
+</p>
+
+</section>
+
+<footer>
+
+<p>
+
+Herramientas gratuitas para calcular gastos de conducción
+
+</p>
+
+</footer>
+
+<script>
+
+function calcularViaje(){
+
+let distancia=parseFloat(document.getElementById("distancia").value)||0
+let consumo=parseFloat(document.getElementById("consumo").value)||1
+let gasolina=parseFloat(document.getElementById("gasolina").value)||0
+
+let litros=distancia/consumo
+let costo=litros*gasolina
+
+document.getElementById("resultado").innerText="$"+costo.toFixed(2)
+
+}
+
+</script>
+
+</body>
+
+</html>

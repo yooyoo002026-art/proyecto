@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculadora de Ganancias Uber o Didi | Conductor</title>
+
+<meta name="description" content="Calcula tus ganancias reales como conductor de Uber o Didi después de gasolina y gastos.">
+
+<meta name="keywords" content="ganancias uber, ganancias didi, calculadora conductor, ganancias reales uber">
+
+<meta name="robots" content="index, follow">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#f6f8fb;
+color:#1f2937;
+}
+
+.nav{
+background:white;
+border-bottom:1px solid #eee;
+}
+
+.nav-container{
+max-width:1100px;
+margin:auto;
+padding:18px;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.logo{
+font-weight:600;
+font-size:20px;
+}
+
+.hero{
+text-align:center;
+padding:80px 20px;
+}
+
+.hero h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#6b7280;
+font-size:18px;
+}
+
+.calculator-section{
+max-width:800px;
+margin:auto;
+padding:20px;
+}
+
+.calculator{
+background:white;
+padding:40px;
+border-radius:14px;
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.calculator h2{
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+button{
+background:#2563eb;
+color:white;
+padding:14px;
+border:none;
+border-radius:8px;
+width:100%;
+cursor:pointer;
+font-size:16px;
+}
+
+.resultado{
+margin-top:20px;
+text-align:center;
+}
+
+.resultado h3{
+font-size:32px;
+color:#2563eb;
+}
+
+.app{
+background:#111827;
+color:white;
+text-align:center;
+padding:70px 20px;
+margin-top:60px;
+}
+
+.btn-app{
+display:inline-block;
+margin-top:20px;
+background:#2563eb;
+padding:14px 22px;
+border-radius:8px;
+color:white;
+text-decoration:none;
+}
+
+.info{
+max-width:800px;
+margin:auto;
+padding:60px 20px;
+line-height:1.7;
+}
+
+footer{
+text-align:center;
+padding:40px;
+color:#6b7280;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="nav">
+
+<div class="nav-container">
+
+<div class="logo">
+Control Total Conductor
+</div>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<h1>
+Calculadora de ganancias conductor
+</h1>
+
+<p>
+Descubre cuánto ganas realmente después de gasolina y gastos.
+</p>
+
+</section>
+
+<section class="calculator-section">
+
+<div class="calculator">
+
+<h2>Calcula tus ganancias reales</h2>
+
+<label>Ingresos del día</label>
+
+<input id="ingresos" type="number" placeholder="Ejemplo: 1500">
+
+<label>Gasto en gasolina</label>
+
+<input id="gasolina" type="number" placeholder="Ejemplo: 400">
+
+<label>Otros gastos</label>
+
+<input id="gastos" type="number" placeholder="Ejemplo: 100">
+
+<button onclick="calcularGanancia()">
+
+Calcular ganancia real
+
+</button>
+
+<div class="resultado">
+
+<p>Ganancia real</p>
+
+<h3 id="resultado">$0</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="app">
+
+<h2>Control total de ingresos para conductores</h2>
+
+<p>
+
+La app <b>Control Total Conductor</b> te permitirá registrar ingresos, gasolina y ganancias automáticamente.
+
+</p>
+
+<a class="btn-app" href="https://docs.google.com/forms/d/e/1FAIpQLScWlK9OJ0X5y0yKI0ZXIMJsLc8lsPyCjlfU8yRBy4n8pK0o0Q/viewform?usp=header
+" target="_blank">
+
+Próximamente — Regístrate aquí
+
+</a>
+
+</section>
+
+<section class="info">
+
+<h2>Cómo calcular las ganancias reales de un conductor</h2>
+
+<p>
+
+Muchos conductores de aplicaciones solo consideran los ingresos totales del día, pero olvidan restar gastos como gasolina, mantenimiento o comisiones.
+
+Esta calculadora ayuda a estimar la ganancia real después de restar los gastos principales del día.
+
+</p>
+
+<p>
+
+Entender las ganancias reales es clave para saber si realmente es rentable trabajar como conductor.
+
+</p>
+
+</section>
+
+<footer>
+
+<p>
+
+Herramientas gratuitas para conductores
+
+</p>
+
+</footer>
+
+<script>
+
+function calcularGanancia(){
+
+let ingresos=parseFloat(document.getElementById("ingresos").value)||0
+let gasolina=parseFloat(document.getElementById("gasolina").value)||0
+let gastos=parseFloat(document.getElementById("gastos").value)||0
+
+let ganancia=ingresos-gasolina-gastos
+
+document.getElementById("resultado").innerText="$"+ganancia.toFixed(2)
+
+}
+
+</script>
+
+</body>
+
+</html>
