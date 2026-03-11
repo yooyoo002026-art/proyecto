@@ -3,23 +3,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>https://tusitio.com/</loc>
+<loc>https://calculadora-conductor.pages.dev/</loc>
 </url>
 
 <url>
-<loc>https://tusitio.com/herramientas/</loc>
+<loc>https://calculadora-conductor.pages.dev/herramientas/</loc>
 </url>
 
 <url>
-<loc>https://tusitio.com/calculadoras/ganancias-conductor.html</loc>
+<loc>https://calculadora-conductor.pages.dev/calculadoras/ganancias-conductor.html</loc>
 </url>
 
 <url>
-<loc>https://tusitio.com/calculadoras/gasolina-km.html</loc>
+<loc>https://calculadora-conductor.pages.dev/calculadoras/gasolina-km.html</loc>
 </url>
 
 <url>
-<loc>https://tusitio.com/calculadoras/sueldo-hora.html</loc>
+<loc>https://calculadora-conductor.pages.dev/calculadoras/sueldo-hora.html</loc>
 </url>
 
-</urlset>
+<url>
+<loc>https://calculadora-conductor.pages.dev/calculadoras/costo-viaje.html</loc>
+</url>
+
+<url>
+<loc>https://calculadora-conductor.pages.dev/calculadoras/ganancias-app.html</loc>
+</url>
+
+</urlset> 
