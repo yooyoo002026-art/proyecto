@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://tusitio.com/sitemap.xml
+Sitemap: https://calculadora-conductor.pages.dev/sitemap.xml
