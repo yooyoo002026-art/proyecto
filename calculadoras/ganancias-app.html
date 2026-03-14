@@ -40,7 +40,7 @@ max-width:1100px;
 margin:auto;
 padding:18px;
 display:flex;
-justify-content:center;
+justify-content:space-between;
 align-items:center;
 }
 
@@ -52,6 +52,55 @@ font-size:20px;
 text-decoration: none;
 color: inherit;
 }
+
+.nav-right{position:relative;}
+.dropdown{position:relative;}
+.dropdown-btn{
+background:#2563eb;
+color:white;
+border:none;
+padding:10px 16px;
+border-radius:8px;
+cursor:pointer;
+font-size:15px;
+font-family:inherit;
+display:inline-flex;
+align-items:center;
+gap:6px;
+}
+.dropdown-btn:hover{background:#1d4ed8;}
+.dropdown-panel{
+position:absolute;
+top:100%;
+right:0;
+margin-top:8px;
+background:white;
+border-radius:10px;
+box-shadow:0 10px 40px rgba(0,0,0,0.12);
+min-width:240px;
+padding:8px 0;
+z-index:100;
+display:none;
+flex-direction:column;
+}
+.dropdown-panel.open{display:flex;}
+.dropdown-panel a{
+padding:10px 18px;
+color:#1f2937;
+text-decoration:none;
+font-size:15px;
+text-align:left;
+}
+.dropdown-panel a:hover{background:#f3f4f6;color:#2563eb;}
+.dropdown-label{
+font-size:11px;
+text-transform:uppercase;
+letter-spacing:0.05em;
+color:#6b7280;
+padding:12px 18px 4px;
+font-weight:600;
+}
+
 .hero{
 text-align:center;
 padding:80px 20px;
@@ -151,15 +200,29 @@ color:#6b7280;
 <body>
 
 <header class="nav">
-
 <div class="nav-container">
-
-<div class="logo">
-<a href="../">Control Total Conductor</a>
+<div class="logo"><a href="../index.html">Control Total Conductor</a></div>
+<div class="nav-right">
+<div class="dropdown">
+<button type="button" class="dropdown-btn" onclick="toggleNavMenu()" aria-expanded="false" aria-haspopup="true" id="navMenuBtn">Herramientas y más ▾</button>
+<div class="dropdown-panel" id="navMenuPanel">
+<a href="../index.html">Inicio</a>
+<span class="dropdown-label">Calculadoras</span>
+<a href="ganancias-conductor.html">Ganancias conductor</a>
+<a href="gasolina-km.html">Gasolina por km</a>
+<a href="sueldo-hora.html">Sueldo por hora</a>
+<a href="costo-viaje.html">Costo de viaje</a>
+<a href="ganancias-app.html">Ganancias app</a>
+<a href="comision-app.html">Comisión app</a>
+<span class="dropdown-label">Sitio</span>
+<a href="../faq/index.html">FAQ</a>
+<a href="../legal/privacidad.html">Privacidad</a>
+<a href="../legal/cookies.html">Cookies</a>
+<a href="../legal/terminos.html">Términos</a>
 </div>
-
 </div>
-
+</div>
+</div>
 </header>
 
 <section class="hero">
@@ -220,8 +283,7 @@ La app <b>Control Total Conductor</b> te permitirá registrar ingresos, gasolina
 
 </p>
 
-<a class="btn-app" href="https://docs.google.com/forms/d/e/1FAIpQLScWlK9OJ0X5y0yKI0ZXIMJsLc8lsPyCjlfU8yRBy4n8pK0o0Q/viewform?usp=header
-" target="_blank">
+<a class="btn-app" href="https://docs.google.com/forms/d/e/1FAIpQLScWlK9OJ0X5y0yKI0ZXIMJsLc8lsPyCjlfU8yRBy4n8pK0o0Q/viewform?usp=header" target="_blank">
 
 Próximamente — Regístrate aquí
 
@@ -251,11 +313,8 @@ Entender las ganancias reales es clave para saber si realmente es rentable traba
 
 <footer>
 
-<p>
-
-Herramientas gratuitas para conductores
-
-</p>
+<p>Herramientas gratuitas para conductores</p>
+<p style="margin-top:10px;"><a href="../faq/index.html" style="color:#6b7280;text-decoration:underline;">FAQ</a> · <a href="../legal/privacidad.html" style="color:#6b7280;text-decoration:underline;">Privacidad</a> · <a href="../legal/cookies.html" style="color:#6b7280;text-decoration:underline;">Cookies</a> · <a href="../legal/terminos.html" style="color:#6b7280;text-decoration:underline;">Términos</a></p>
 
 </footer>
 
@@ -273,6 +332,18 @@ document.getElementById("resultado").innerText="$"+ganancia.toFixed(2)
 
 }
 
+function toggleNavMenu(){
+var p=document.getElementById('navMenuPanel');
+var b=document.getElementById('navMenuBtn');
+p.classList.toggle('open');
+b.setAttribute('aria-expanded',p.classList.contains('open'));
+}
+document.addEventListener('click',function(e){
+if(!e.target.closest('.dropdown')){
+document.getElementById('navMenuPanel').classList.remove('open');
+document.getElementById('navMenuBtn').setAttribute('aria-expanded','false');
+}
+});
 </script>
 
 </body>
