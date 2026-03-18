@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Comisión Uber conductor | Control Total Conductor</title>
+
+<meta name="description" content="Calcula cuánto paga de comisión Uber por cada viaje. Conoce cuánto te queda realmente.">
+
+<meta name="keywords" content="comision uber, comision uber conductor, comision por viaje uber, tarifa uber">
+
+<meta property="og:title" content="Control Total Conductor | Calculadora">
+<meta property="og:description" content="Calculadora para conductores de Uber, DiDi y repartidores. Estima ingresos, costos y rentabilidad real.">
+<meta property="og:image" content="/og-image.png">
+<meta property="og:type" content="website">
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:#f4f6f8;
+}
+
+header{
+background:white;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-weight:bold;
+font-size:18px;
+}
+
+.btn-app{
+background:#2f5fe3;
+color:white;
+padding:10px 15px;
+border-radius:6px;
+text-decoration:none;
+font-size:14px;
+}
+
+.menu-btn{
+font-size:24px;
+cursor:pointer;
+background:none;
+border:none;
+}
+
+.hero{
+text-align:center;
+padding:40px 20px;
+}
+
+.hero h1{
+margin-bottom:10px;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:1px solid #ddd;
+border-radius:6px;
+}
+
+button{
+margin-top:20px;
+width:100%;
+padding:14px;
+background:#2f5fe3;
+color:white;
+border:none;
+border-radius:6px;
+}
+
+.resultado{
+text-align:center;
+margin-top:20px;
+font-size:24px;
+color:#2f5fe3;
+}
+
+.cta{
+background:#0c1c3d;
+color:white;
+text-align:center;
+padding:40px;
+margin-top:40px;
+}
+
+.cta-button{
+margin-top:20px;
+width:100%;
+padding:14px;
+background:#2f5fe3;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+footer{
+text-align:center;
+padding:20px;
+font-size:14px;
+}
+
+footer a{
+color:#2f5fe3;
+text-decoration:none;
+margin:0 5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Control Total Conductor</div>
+
+<a href="#" class="btn-app">App para conductores</a>
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+</header>
+
+<section class="hero">
+
+<h1>Cuánto se paga de comisión Uber</h1>
+<p>Calcula la comisión que cobra Uber por tus viajes</p>
+
+</section>
+
+<div class="container">
+<section class="intro">
+<p>Si manejas para Uber o DiDi, saber cuánto ganas realmente es más importante que ver solo el ingreso bruto. Muchos conductores confunden lo que muestra la app con la ganancia real, pero hay gastos diarios como gasolina, comisiones, mantenimiento y tiempo en espera. Esta calculadora está pensada para ayudarte a estimar tus ingresos netos con datos simples: pago promedio por viaje, número de viajes y días trabajados. Con esa información puedes tomar decisiones sobre horarios, zonas con más demanda y si vale la pena manejar más horas. También es útil para planear metas semanales o mensuales y comparar tu rendimiento entre apps.</p>
+</section>
+
+<div class="card">
+
+<h2>Calculadora de comisión Uber</h2>
+
+<input id="viaje" placeholder="Valor del viaje ($)" type="number">
+
+<input id="comision" placeholder="Porcentaje de comisión (25 = 25%)" type="number">
+
+<input id="viajes" placeholder="Número de viajes por día" type="number">
+
+<button onclick="calcular()">Calcular comisión diaria</button>
+
+<div class="resultado" id="resultado">$0</div>
+
+<p style="margin-top:15px;font-size:14px;color:#666;">Comisión total que paga Uber al día</p>
+
+</div>
+
+</div>
+
+<section class="cta">
+
+<h2>App para conductores</h2>
+<p>Estamos desarrollando la app Control Total Conductor para ayudarte a controlar ingresos, gasolina y rentabilidad real.</p>
+
+<button class="cta-button">Próximamente — Regístrate aquí</button>
+
+</section>
+
+<footer>
+
+<a href="/faq.html">FAQ</a> |
+<a href="/privacidad.html">Privacidad</a> |
+<a href="/cookies.html">Cookies</a> |
+<a href="/terminos.html">Términos</a>
+
+</footer>
+
+<script>
+
+function calcular(){
+
+let viaje=parseFloat(document.getElementById("viaje").value) || 0;
+let comisionPorcentaje=parseFloat(document.getElementById("comision").value) || 0;
+let viajes=parseFloat(document.getElementById("viajes").value) || 0;
+
+let comisionViaje=viaje*(comisionPorcentaje/100);
+let comisionDiaria=comisionViaje*viajes;
+
+document.getElementById("resultado").innerHTML="$"+comisionDiaria.toFixed(2);
+
+}
+
+function toggleMenu(){
+alert("Menú de calculadoras:\n\n1. Calculadora ganancias Uber\n2. Calculadora ganancias Didi\n3. Calculadora gasolina por km\n4. Calculadora costo por viaje\n5. Calculadora sueldo por hora\n6. Calculadora rentabilidad auto\n7. Calculadora comisión Uber\n8. Calculadora comisión Didi\n9. Calculadora gasto semanal auto\n10. Calculadora ganancia mensual\n11. Calculadora depreciación auto\n12. Calculadora mantenimiento auto\n13. Calculadora seguro auto\n14. Calculadora costo total conducir\n15. Cuánto gana Uber México\n16. Gasto gasolina Uber\n17. Comisión Uber\n18. Ganancias Didi México\n19. Costo mantenimiento auto\n20. Costo trabajar Uber");
+}
+
+</script>
+
+</body>
+</html>

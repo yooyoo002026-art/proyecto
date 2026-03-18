@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cuánto gana un conductor de Uber | Calculadora 2024</title>
+<meta name="description" content="Calculadora de gananciasUber. Descubre cuánto gana realmente un conductor de Uber en México después de gasolina y comisión.">
+<meta name="keywords" content="cuánto gana un conductor de Uber, ganancia Uber, conductor Uber México, calcular ganancias Uber">
+<meta property="og:title" content="Control Total Conductor | Calculadora">
+<meta property="og:description" content="Calculadora para conductores de Uber, DiDi y repartidores. Estima ingresos, costos y rentabilidad real.">
+<meta property="og:image" content="/og-image.png">
+<meta property="og:type" content="website">
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f4f6f8;
+}
+
+header{
+background:white;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:100;
+box-shadow:0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo{
+font-weight:bold;
+font-size:18px;
+}
+
+.app-btn{
+background:#2f5fe3;
+color:white;
+padding:12px 20px;
+border-radius:6px;
+text-decoration:none;
+font-weight:bold;
+margin:0 15px;
+}
+
+.menu-btn{
+font-size:24px;
+cursor:pointer;
+background:none;
+border:none;
+}
+
+.hamburger{
+display:none;
+position:fixed;
+top:15px;
+right:20px;
+z-index:1000;
+background:white;
+padding:15px;
+border-radius:8px;
+box-shadow:0 4px 20px rgba(0,0,0,0.15);
+min-width:250px;
+}
+
+.hamburger.show{
+display:block;
+}
+
+.hamburger a{
+display:block;
+padding:10px 0;
+color:#333;
+text-decoration:none;
+border-bottom:1px solid #eee;
+}
+
+.hamburger a:last-child{
+border-bottom:none;
+}
+
+.hero{
+text-align:center;
+padding:40px 20px;
+background:#fff;
+margin-bottom:20px;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+padding:0 20px 40px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+margin-bottom:25px;
+}
+
+.calculator-box{
+background:white;
+padding:30px 25px;
+border-radius:10px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+border:2px solid #2f5fe3;
+}
+
+input{
+width:100%;
+padding:14px;
+margin-top:10px;
+border:1px solid #ddd;
+border-radius:8px;
+font-size:16px;
+box-sizing:border-box;
+}
+
+label{
+font-weight:bold;
+color:#333;
+display:block;
+margin-top:15px;
+}
+
+button.calc-btn{
+margin-top:25px;
+width:100%;
+padding:16px;
+background:#2f5fe3;
+color:white;
+border:none;
+border-radius:8px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.resultado{
+text-align:center;
+margin-top:25px;
+font-size:28px;
+color:#2f5fe3;
+font-weight:bold;
+padding:20px;
+background:#f0f4ff;
+border-radius:8px;
+}
+
+section{
+margin-bottom:30px;
+}
+
+h2{
+color:#333;
+margin-bottom:15px;
+}
+
+.factores ul{
+list-style:none;
+padding:0;
+}
+
+.factores li{
+padding:10px 0;
+border-bottom:1px solid #eee;
+}
+
+.factores li:before{
+content:"✓";
+color:#2f5fe3;
+margin-right:10px;
+font-weight:bold;
+}
+
+.faq-item{
+margin-bottom:20px;
+padding-bottom:20px;
+border-bottom:1px solid #eee;
+}
+
+.faq-item h3{
+color:#2f5fe3;
+font-size:18px;
+margin-bottom:10px;
+}
+
+.cta{
+background:#0c1c3d;
+color:white;
+text-align:center;
+padding:50px 20px;
+margin-top:40px;
+}
+
+.cta-btn{
+margin-top:20px;
+display:inline-block;
+padding:15px 40px;
+background:#2f5fe3;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+font-size:16px;
+}
+
+footer{
+text-align:center;
+padding:30px 20px;
+font-size:14px;
+background:white;
+}
+
+footer a{
+color:#2f5fe3;
+text-decoration:none;
+margin:0 10px;
+}
+
+@media(max-width:600px){
+.app-btn{
+display:none;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Control Total Conductor</div>
+<a href="#" class="app-btn">App para conductores</a>
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+</header>
+
+<div class="hamburger" id="hamburger">
+<strong>Calculadoras</strong>
+<a href="calculadora-ganancias-uber.html">Ganancias Uber</a>
+<a href="calculadora-ganancias-didi.html">Ganancias Didi</a>
+<a href="calculadora-gasolina-km.html">Gasolina por km</a>
+<a href="calculadora-costo-viaje.html">Costo por viaje</a>
+<a href="calculadora-sueldo-hora.html">Sueldo por hora</a>
+<a href="calculadora-rentabilidad-auto.html">Rentabilidad auto</a>
+<a href="calculadora-comision-uber.html">Comisión Uber</a>
+<a href="calculadora-comision-didi.html">Comisión Didi</a>
+<a href="calculadora-depreciacion-auto.html">Depreciación auto</a>
+<a href="calculadora-mantenimiento-auto.html">Mantenimiento</a>
+<a href="calculadora-seguro-auto.html">Seguro auto</a>
+<a href="cuanto-gana-un-uber-en-mexico.html">Gana Uber México</a>
+<a href="cuanto-gana-un-didi-en-mexico.html">Gana Didi México</a>
+<a href="cuanto-gasta-un-uber-en-gasolina.html">Gasta gasolina Uber</a>
+<a href="cuanto-cuesta-trabajar-en-uber.html">Costo trabajar Uber</a>
+<a href="cuanto-se-paga-de-comision-uber.html">Paga comisión Uber</a>
+<a href="cuanto-cuesta-mantener-un-auto.html">Costo mantener auto</a>
+<a href="calculadora-gasto-semanal-auto.html">Gasto semanal</a>
+<a href="calculadora-ganancia-mensual.html">Ganancia mensual</a>
+<a href="calculadora-costo-total-conducir.html">Costo total conducir</a>
+</div>
+
+<section class="hero">
+
+<h1>Cuánto gana un conductor de Uber</h1>
+
+</section>
+
+<div class="container">
+
+<section class="intro">
+
+<p>
+Muchos conductores quieren saber cuánto gana realmente un conductor de Uber después de descontar gasolina, comisión de la plataforma y gastos del vehículo. Esta calculadora te ayuda a estimar tus ganancias netas de forma rápida y realista, considerando los costos reales de operar en ciudades de México.
+</p>
+
+</section>
+
+<div class="calculator-box">
+
+<h2>Calculadora de ganancias Uber</h2>
+
+<label>Ganancia promedio por viaje ($)</label>
+<input id="viaje" type="number" placeholder="Ejemplo: 60">
+
+<label>Viajes por día</label>
+<input id="viajes" type="number" placeholder="Ejemplo: 15">
+
+<label>Días trabajados al mes</label>
+<input id="dias" type="number" placeholder="Ejemplo: 26">
+
+<label>Comisión Uber (%)</label>
+<input id="comision" type="number" placeholder="Ejemplo: 25" value="25">
+
+<label>Gasto gasolina diario ($)</label>
+<input id="gasolina" type="number" placeholder="Ejemplo: 350">
+
+<button class="calc-btn" onclick="calcular()">CALCULAR</button>
+
+<div class="resultado" id="resultado">$0</div>
+
+</div>
+
+<section class="explicacion">
+
+<h2>Cómo funciona el cálculo</h2>
+
+<p>
+
+La calculadora toma tus ingresos brutos por viaje, multiplica por el número de viajes y días trabajados, luego resta la comisión de Uber (generalmente 25%) y tus gastos de gasolina diarios. El resultado es tu ganancia neta real, que es lo que realmente llega a tu bolsillo después de todos los descuentos.
+
+</p>
+
+</section>
+
+<section class="ejemplo">
+
+<h2>Ejemplo real en Ciudad de México</h2>
+
+<p>
+
+Un conductor que gana $60 por viaje, realiza 15 viajes al día, trabaja 26 días al mes, paga 25% de comisión y gasta $350 en gasolina:
+
+</p>
+
+<p><strong>Ingresos brutos:</strong> $60 × 15 × 26 = $23,400</p>
+<p><strong>Comisión Uber:</strong> $23,400 × 25% = $5,850</p>
+<p><strong>Gasolina del mes:</strong> $350 × 26 = $9,100</p>
+<p><strong>Ganancia neta:</strong> $23,400 - $5,850 - $9,100 = <strong>$8,450 mensuales</strong></p>
+
+</section>
+
+<section class="factores">
+
+<h2>Factores que afectan tus ganancias</h2>
+
+<ul>
+
+<li><strong>Ciudad donde trabajas:</strong> Las tarifas varían según la demanda y_costos de vida</li>
+<li><strong>Horas de conducción:</strong> Horas pico generan más ingresos por viaje</li>
+<li><strong>Días trabajados:</strong> Trabajo de fines de semana aumenta ganancias</li>
+<li><strong>Precio de gasolina:</strong> Afecta directamente tus ganancias netas</li>
+<li><strong>Comisión de Uber:</strong> Puede variar entre 20% y 30% según ciudad</li>
+<li><strong>Tipo de vehículo:</strong> Autos más nuevos pueden tener menos mantenimiento</li>
+<li><strong>Zona de trabajo:</strong> Zonas turísticas o de negocios pagan más</li>
+
+</ul>
+
+</section>
+
+<section class="faq">
+
+<h2>Preguntas frecuentes</h2>
+
+<div class="faq-item">
+<h3>¿Cuánto paga Uber por viaje en promedio?</h3>
+<p>Uber paga entre $40 y $120 por viaje dependiendo de la distancia, tiempo y demanda. Los viajes más largos y en horas pico generan mayores ingresos.</p>
+</div>
+
+<div class="faq-item">
+<h3>¿Cuánto cobra Uber de comisión a los conductores?</h3>
+<p>La comisión de Uber normalmente es entre 20% y 25% del valor de cada viaje, aunque puede variar según la ciudad y tipo de servicio.</p>
+</div>
+
+<div class="faq-item">
+<h3>¿Es rentable trabajar como conductor de Uber?</h3>
+<p>Sí puede ser rentable si controlas tus gastos (gasolina, mantenimiento) y trabajas estratégicamente en horas de mayor demanda. Es importante calcular tus ganancias netas.</p>
+</div>
+
+<div class="faq-item">
+<h3>¿Cuántos viajes se necesitan para ganar bien?</h3>
+<p>Se recomienda realizar entre 12 y 18 viajes diarios para obtener ganancias aceptables. Trabajar 5-6 días a la semana maximiza los ingresos.</p>
+</div>
+
+<div class="faq-item">
+<h3>¿Cuál es el ingreso mensual promedio de un conductor Uber?</h3>
+<p>En promedio, un conductor de Uber en México puede ganar entre $8,000 y $15,000 pesos netos al mes, dependiendo de la ciudad y horas trabajadas.</p>
+</div>
+
+</section>
+
+</div>
+
+<section class="cta">
+
+<h2>App para conductores</h2>
+<p>Estamos desarrollando la app Control Total Conductor para ayudarte a controlar ingresos, gasolina y rentabilidad real.</p>
+<a href="#" class="cta-btn">Próximamente — Regístrate aquí</a>
+
+</section>
+
+<footer>
+
+<p><strong>Calculadoras para conductores de Uber y DiDi</strong></p>
+<br>
+<a href="/faq.html">Política de privacidad</a> |
+<a href="/privacidad.html">Términos</a> |
+<a href="/cookies.html">Cookies</a> |
+<a href="/terminos.html">Contacto</a>
+
+</footer>
+
+<script>
+
+function toggleMenu(){
+document.getElementById('hamburger').classList.toggle('show');
+}
+
+function calcular(){
+let viaje=parseFloat(document.getElementById("viaje").value)||0
+let viajes=parseFloat(document.getElementById("viajes").value)||0
+let dias=parseFloat(document.getElementById("dias").value)||0
+let comision=parseFloat(document.getElementById("comision").value)||25
+let gasolina=parseFloat(document.getElementById("gasolina").value)||0
+
+let ingresoBruto=viaje*viajes*dias
+let comisionUber=ingresoBruto*(comision/100)
+let gastoGasolina=gasolina*dias
+let gananciaNeta=ingresoBruto-comisionUber-gastoGasolina
+
+document.getElementById("resultado").innerHTML="$"+gananciaNeta.toFixed(2)+" mensuales"
+}
+
+</script>
+
+</body>
+</html>

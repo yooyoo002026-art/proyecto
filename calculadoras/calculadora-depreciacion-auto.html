@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Depreciación de auto por km | Calculadora 2024</title>
+<meta name="description" content="Calcula la depreciación de tu auto por kilómetro. Conoce cuánto pierde valor tu auto como conductor de Uber o Didi.">
+<meta name="keywords" content="depreciación auto por km, calcular depreciación auto, valor auto conductor, costo depreciación vehículo">
+
+<meta property="og:title" content="Control Total Conductor | Calculadora">
+<meta property="og:description" content="Calculadora para conductores de Uber, DiDi y repartidores. Estima ingresos, costos y rentabilidad real.">
+<meta property="og:image" content="/og-image.png">
+<meta property="og:type" content="website">
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f4f6f8;
+}
+
+header{
+background:white;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:100;
+box-shadow:0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo{
+font-weight:bold;
+font-size:18px;
+}
+
+.app-btn{
+background:#2f5fe3;
+color:white;
+padding:12px 20px;
+border-radius:6px;
+text-decoration:none;
+font-weight:bold;
+margin:0 15px;
+}
+
+.menu-btn{
+font-size:24px;
+cursor:pointer;
+background:none;
+border:none;
+}
+
+.hamburger{
+display:none;
+position:fixed;
+top:15px;
+right:20px;
+z-index:1000;
+background:white;
+padding:15px;
+border-radius:8px;
+box-shadow:0 4px 20px rgba(0,0,0,0.15);
+min-width:250px;
+}
+
+.hamburger.show{
+display:block;
+}
+
+.hamburger a{
+display:block;
+padding:10px 0;
+color:#333;
+text-decoration:none;
+border-bottom:1px solid #eee;
+}
+
+.hamburger a:last-child{
+border-bottom:none;
+}
+
+.hero{
+text-align:center;
+padding:40px 20px;
+background:#fff;
+margin-bottom:20px;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+padding:0 20px 40px;
+}
+
+.calculator-box{
+background:white;
+padding:30px 25px;
+border-radius:10px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+border:2px solid #2f5fe3;
+}
+
+input{
+width:100%;
+padding:14px;
+margin-top:10px;
+border:1px solid #ddd;
+border-radius:8px;
+font-size:16px;
+box-sizing:border-box;
+}
+
+label{
+font-weight:bold;
+color:#333;
+display:block;
+margin-top:15px;
+}
+
+button.calc-btn{
+margin-top:25px;
+width:100%;
+padding:16px;
+background:#2f5fe3;
+color:white;
+border:none;
+border-radius:8px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.resultado{
+text-align:center;
+margin-top:25px;
+font-size:28px;
+color:#2f5fe3;
+font-weight:bold;
+padding:20px;
+background:#f0f4ff;
+border-radius:8px;
+}
+
+section{
+margin-bottom:30px;
+}
+
+h2{
+color:#333;
+margin-bottom:15px;
+}
+
+.factores ul{
+list-style:none;
+padding:0;
+}
+
+.factores li{
+padding:10px 0;
+border-bottom:1px solid #eee;
+}
+
+.factores li:before{
+content:"✓";
+color:#2f5fe3;
+margin-right:10px;
+font-weight:bold;
+}
+
+.faq-item{
+margin-bottom:20px;
+padding-bottom:20px;
+border-bottom:1px solid #eee;
+}
+
+.faq-item h3{
+color:#2f5fe3;
+font-size:18px;
+margin-bottom:10px;
+}
+
+.cta{
+background:#0c1c3d;
+color:white;
+text-align:center;
+padding:50px 20px;
+margin-top:40px;
+}
+
+.cta-btn{
+margin-top:20px;
+display:inline-block;
+padding:15px 40px;
+background:#2f5fe3;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+font-size:16px;
+}
+
+footer{
+text-align:center;
+padding:30px 20px;
+font-size:14px;
+background:white;
+}
+
+footer a{
+color:#2f5fe3;
+text-decoration:none;
+margin:0 10px;
+}
+
+@media(max-width:600px){
+.app-btn{
+display:none;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Control Total Conductor</div>
+<a href="#" class="app-btn">App para conductores</a>
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+</header>
+
+<div class="hamburger" id="hamburger">
+<strong>Calculadoras</strong>
+<a href="calculadora-ganancias-uber.html">Ganancias Uber</a>
+<a href="calculadora-ganancias-didi.html">Ganancias Didi</a>
+<a href="calculadora-gasolina-km.html">Gasolina por km</a>
+<a href="calculadora-costo-viaje.html">Costo por viaje</a>
+<a href="calculadora-sueldo-hora.html">Sueldo por hora</a>
+<a href="calculadora-rentabilidad-auto.html">Rentabilidad auto</a>
+<a href="calculadora-comision-uber.html">Comisión Uber</a>
+<a href="calculadora-comision-didi.html">Comisión Didi</a>
+<a href="calculadora-depreciacion-auto.html">Depreciación auto</a>
+<a href="calculadora-mantenimiento-auto.html">Mantenimiento</a>
+<a href="calculadora-seguro-auto.html">Seguro auto</a>
+<a href="cuanto-gana-un-uber-en-mexico.html">Gana Uber México</a>
+<a href="cuanto-gana-un-didi-en-mexico.html">Gana Didi México</a>
+<a href="cuanto-gasta-un-uber-en-gasolina.html">Gasta gasolina Uber</a>
+<a href="cuanto-cuesta-trabajar-en-uber.html">Costo trabajar Uber</a>
+<a href="cuanto-se-paga-de-comision-uber.html">Paga comisión Uber</a>
+<a href="cuanto-cuesta-mantener-un-auto.html">Costo mantener auto</a>
+<a href="calculadora-gasto-semanal-auto.html">Gasto semanal</a>
+<a href="calculadora-ganancia-mensual.html">Ganancia mensual</a>
+<a href="calculadora-costo-total-conducir.html">Costo total conducir</a>
+</div>
+
+<section class="hero">
+
+<h1>Depreciación de auto por kilómetro</h1>
+
+</section>
+
+<div class="container">
+
+<section class="intro">
+
+<p>
+La depreciación es uno de los costos más ignorados por los conductores de Uber y Didi, pero puede representar hasta el 30% de tus gastos operativos. Esta calculadora te ayuda a conocer cuánto pierde valor tu auto por cada kilómetro que recorres, para que puedas calcular tus ganancias reales de forma precisa.
+</p>
+
+</section>
+
+<div class="calculator-box">
+
+<h2>Calculadora de depreciación</h2>
+
+<label>Valor actual del auto ($)</label>
+<input id="valor" type="number" placeholder="Ejemplo: 200000">
+
+<label>Valor esperado después de 5 años ($)</label>
+<input id="valorFinal" type="number" placeholder="Ejemplo: 80000">
+
+<label>Kilómetros anuales estimados</label>
+<input id="kmAnuales" type="number" placeholder="Ejemplo: 40000">
+
+<button class="calc-btn" onclick="calcular()">CALCULAR</button>
+
+<div class="resultado" id="resultado">$0 por km</div>
+
+</div>
+
+<section class="explicacion">
+
+<h2>Cómo funciona el cálculo</h2>
+
+<p>
+
+La calculadora calcula la depreciación anual dividiendo la pérdida de valor total entre los años. Luego divide esa pérdida anual entre los kilómetros recorridos anualmente para obtener el costo por kilómetro. Este costo debe sumarse a tus gastos de gasolina y mantenimiento para conocer tu costo real de operación.
+
+</p>
+
+</section>
+
+<section class="ejemplo">
+
+<h2>Ejemplo real auto compacto</h2>
+
+<p>
+
+Un auto que cuesta $200,000 nuevo, se estima valdrá $80,000 después de 5 años, y recorre 40,000 km anuales trabajando en Uber:
+
+</p>
+
+<p><strong>Depreciación total:</strong> $200,000 - $80,000 = $120,000 en 5 años</p>
+<p><strong>Depreciación anual:</strong> $120,000 ÷ 5 = $24,000 por año</p>
+<p><strong>Depreciación por km:</strong> $24,000 ÷ 40,000 = <strong>$0.60 por kilómetro</strong></p>
+
+<p>Si haces 200 km por día, la depreciación diaria es: $0.60 × 200 = $120. Al mes (26 días): $120 × 26 = $3,120 de depreciación mensual.</p>
+
+</section>
+
+<section class="factores">
+
+<h2>Factores que afectan la depreciación</h2>
+
+<ul>
+
+<li><strong>Marca y modelo:</strong> Autos confiables como Toyota y Honda deprecian menos</li>
+<li><strong>Kilometraje total:</strong> Más kilómetros aceleran la depreciación del auto</li>
+<li><strong>Uso de la plataforma:</strong> Autos de apps tienen más desgaste que autos personales</li>
+<li><strong>Edad del auto:</strong> Los primeros años son cuando más se deprecia</li>
+<li><strong>Estado de mantenimiento:</strong> Un auto bien cuidado mantiene mejor su valor</li>
+<li><strong>Mercado de reventa:</strong> La demanda de autos usados afecta el valor de reventa</li>
+<li><strong>Condición exterior:</strong> Golpes, rayas y desgaste reducen el valor</li>
+
+</ul>
+
+</section>
+
+<section class="faq">
+
+<h2>Preguntas frecuentes</h2>
+
+<div class="faq-item">
+<h3>¿Cuánto deprecia un auto por año en promedio?</h3>
+<p>En promedio, un auto nuevo deprecia entre 15% y 20% durante el primer año, y luego entre 10% y 15% anual. Auto compactos deprecian menos que autos de lujo.</p>
+</div>
+
+<div class="faq-item">
+<h3>¿La depreciación se debe considerar como costo real?</h3>
+<p>Absolutamente. La depreciación es un costo real porque representa la pérdida de valor de tu inversión. Cada kilómetro que recorres reduce el valor de tu auto.</p>
+</div>
+
+<div class="faq-item">
+<h3>¿Cómo puedo reducir la depreciación de mi auto?</h3>
+<p>Mantén el auto en excelente condición, haz mantenimiento regular, mantenlo limpio, evita modificarlo y considera kilajetrar menos paraUber usando estrategias para viajes más largos y rentables.</p>
+</div>
+
+<div class="faq-item">
+<h3>¿Los autos de Uber se deprecian más rápido?</h3>
+<p>Sí, porque recorren más kilómetros en menos tiempo. Un auto personal recorre 15,000 km al año, mientras uno de Uber puede recorrer 40,000-60,000 km.</p>
+</div>
+
+<div class="faq-item">
+<h3>¿Qué tipo de auto deprecia menos para Uber?</h3>
+<p>Los autos compactos confiables como Toyota Yaris, Nissan Versa o Honda Fit deprecian menos porque tienen alta demanda en el mercado de autos usados y son conocidos por su durabilidad.</p>
+</div>
+
+</section>
+
+</div>
+
+<section class="cta">
+
+<h2>App para conductores</h2>
+<p>Estamos desarrollando la app Control Total Conductor para ayudarte a controlar ingresos, gasolina y rentabilidad real.</p>
+<a href="#" class="cta-btn">Próximamente — Regístrate aquí</a>
+
+</section>
+
+<footer>
+
+<p><strong>Calculadoras para conductores de Uber y DiDi</strong></p>
+<br>
+<a href="/faq.html">Política de privacidad</a> |
+<a href="/privacidad.html">Términos</a> |
+<a href="/cookies.html">Cookies</a> |
+<a href="/terminos.html">Contacto</a>
+
+</footer>
+
+<script>
+
+function toggleMenu(){
+document.getElementById('hamburger').classList.toggle('show');
+}
+
+function calcular(){
+let valor=parseFloat(document.getElementById("valor").value)||0
+let valorFinal=parseFloat(document.getElementById("valorFinal").value)||0
+let kmAnuales=parseFloat(document.getElementById("kmAnuales").value)||0
+
+let depreciacionTotal=valor-valorFinal
+let depreciacionAnual=depreciacionTotal/5
+let depreciacionKm=kmAnuales>0 ? depreciacionAnual/kmAnuales : 0
+
+document.getElementById("resultado").innerHTML="$"+depreciacionKm.toFixed(2)+" por km"
+}
+
+</script>
+
+</body>
+</html>

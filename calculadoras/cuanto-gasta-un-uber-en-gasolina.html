@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gasto gasolina Uber | Control Total Conductor</title>
+
+<meta name="description" content="Calcula cuánto gasta un conductor de Uber en gasolina por día, semana y mes. Optimiza tus gastos.">
+
+<meta name="keywords" content="gasto gasolina uber, consumo gasolina conductor, combustible uber, calcular gasto gasolina">
+<meta property="og:title" content="Control Total Conductor | Calculadora">
+<meta property="og:description" content="Calculadora para conductores de Uber, DiDi y repartidores. Estima ingresos, costos y rentabilidad real.">
+<meta property="og:image" content="/og-image.png">
+<meta property="og:type" content="website">
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:#f4f6f8;
+}
+
+header{
+background:white;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-weight:bold;
+font-size:18px;
+}
+
+.btn-app{
+background:#2f5fe3;
+color:white;
+padding:10px 15px;
+border-radius:6px;
+text-decoration:none;
+font-size:14px;
+}
+
+.menu-btn{
+font-size:24px;
+cursor:pointer;
+background:none;
+border:none;
+}
+
+.hero{
+text-align:center;
+padding:40px 20px;
+}
+
+.hero h1{
+margin-bottom:10px;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:1px solid #ddd;
+border-radius:6px;
+}
+
+button{
+margin-top:20px;
+width:100%;
+padding:14px;
+background:#2f5fe3;
+color:white;
+border:none;
+border-radius:6px;
+}
+
+.resultado{
+text-align:center;
+margin-top:20px;
+font-size:24px;
+color:#2f5fe3;
+}
+
+.cta{
+background:#0c1c3d;
+color:white;
+text-align:center;
+padding:40px;
+margin-top:40px;
+}
+
+.cta-button{
+margin-top:20px;
+width:100%;
+padding:14px;
+background:#2f5fe3;
+color:white;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+}
+
+footer{
+text-align:center;
+padding:20px;
+font-size:14px;
+}
+
+footer a{
+color:#2f5fe3;
+text-decoration:none;
+margin:0 5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Control Total Conductor</div>
+
+<a href="#" class="btn-app">App para conductores</a>
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+</header>
+
+<section class="hero">
+
+<h1>Cuánto gasta un Uber en gasolina</h1>
+<p>Calcula tu gasto real de combustible como conductor</p>
+
+</section>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Calculadora de gasto de gasolina</h2>
+
+<input id="precio" placeholder="Precio gasolina por litro ($)" type="number">
+
+<input id="litros" placeholder="Litros consumidos por día" type="number">
+
+<input id="dias" placeholder="Días trabajados por semana" type="number">
+
+<button onclick="calcular()">Calcular gasto semanal</button>
+
+<div class="resultado" id="resultado">$0</div>
+
+<p style="margin-top:15px;font-size:14px;color:#666;">Gasto semanal estimado de gasolina</p>
+
+</div>
+
+</div>
+
+<section class="cta">
+
+<h2>App para conductores</h2>
+<p>Estamos desarrollando la app Control Total Conductor para ayudarte a controlar ingresos, gasolina y rentabilidad real.</p>
+
+<button class="cta-button">Próximamente — Regístrate aquí</button>
+
+</section>
+
+<footer>
+
+<a href="/faq.html">FAQ</a> |
+<a href="/privacidad.html">Privacidad</a> |
+<a href="/cookies.html">Cookies</a> |
+<a href="/terminos.html">Términos</a>
+
+</footer>
+
+<script>
+
+function calcular(){
+
+let precio=parseFloat(document.getElementById("precio").value) || 0;
+let litros=parseFloat(document.getElementById("litros").value) || 0;
+let dias=parseFloat(document.getElementById("dias").value) || 0;
+
+let gastoDia=precio*litros;
+let gastoSemanal=gastoDia*dias;
+
+document.getElementById("resultado").innerHTML="$"+gastoSemanal.toFixed(2);
+
+}
+
+function toggleMenu(){
+alert("Menú de calculadoras:\n\n1. Calculadora ganancias Uber\n2. Calculadora ganancias Didi\n3. Calculadora gasolina por km\n4. Calculadora costo por viaje\n5. Calculadora sueldo por hora\n6. Calculadora rentabilidad auto\n7. Calculadora comisión Uber\n8. Calculadora comisión Didi\n9. Calculadora gasto semanal auto\n10. Calculadora ganancia mensual\n11. Calculadora depreciación auto\n12. Calculadora mantenimiento auto\n13. Calculadora seguro auto\n14. Calculadora costo total conducir\n15. Cuánto gana Uber México\n16. Gasto gasolina Uber\n17. Comisión Uber\n18. Ganancias Didi México\n19. Costo mantenimiento auto\n20. Costo trabajar Uber");
+}
+
+</script>
+
+</body>
+</html>

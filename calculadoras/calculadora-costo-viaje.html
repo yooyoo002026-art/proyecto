@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculadora de costo por viaje auto | Uber Didi 2024</title>
+<meta name="description" content="Calcula el costo real por viaje de tu auto como conductor de Uber o Didi. Incluye gasolina, depreciación y mantenimiento por viaje.">
+<meta name="keywords" content="costo por viaje auto, calcular costo viaje, gasto por viaje Uber, costo operativo conductor">
+
+<meta property="og:title" content="Control Total Conductor | Calculadora">
+<meta property="og:description" content="Calculadora para conductores de Uber, DiDi y repartidores. Estima ingresos, costos y rentabilidad real.">
+<meta property="og:image" content="/og-image.png">
+<meta property="og:type" content="website">
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f4f6f8;
+}
+
+header{
+background:white;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:100;
+box-shadow:0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo{
+font-weight:bold;
+font-size:18px;
+}
+
+.app-btn{
+background:#2f5fe3;
+color:white;
+padding:12px 20px;
+border-radius:6px;
+text-decoration:none;
+font-weight:bold;
+margin:0 15px;
+}
+
+.menu-btn{
+font-size:24px;
+cursor:pointer;
+background:none;
+border:none;
+}
+
+.hamburger{
+display:none;
+position:fixed;
+top:15px;
+right:20px;
+z-index:1000;
+background:white;
+padding:15px;
+border-radius:8px;
+box-shadow:0 4px 20px rgba(0,0,0,0.15);
+min-width:250px;
+}
+
+.hamburger.show{
+display:block;
+}
+
+.hamburger a{
+display:block;
+padding:10px 0;
+color:#333;
+text-decoration:none;
+border-bottom:1px solid #eee;
+}
+
+.hamburger a:last-child{
+border-bottom:none;
+}
+
+.hero{
+text-align:center;
+padding:40px 20px;
+background:#fff;
+margin-bottom:20px;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+padding:0 20px 40px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+margin-bottom:25px;
+}
+
+.calculator-box{
+background:white;
+padding:30px 25px;
+border-radius:10px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+border:2px solid #2f5fe3;
+}
+
+input{
+width:100%;
+padding:14px;
+margin-top:10px;
+border:1px solid #ddd;
+border-radius:8px;
+font-size:16px;
+box-sizing:border-box;
+}
+
+label{
+font-weight:bold;
+color:#333;
+display:block;
+margin-top:15px;
+}
+
+button.calc-btn{
+margin-top:25px;
+width:100%;
+padding:16px;
+background:#2f5fe3;
+color:white;
+border:none;
+border-radius:8px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.resultado{
+text-align:center;
+margin-top:25px;
+font-size:28px;
+color:#2f5fe3;
+font-weight:bold;
+padding:20px;
+background:#f0f4ff;
+border-radius:8px;
+}
+
+section{
+margin-bottom:30px;
+}
+
+h2{
+color:#333;
+margin-bottom:15px;
+}
+
+.factores ul{
+list-style:none;
+padding:0;
+}
+
+.factores li{
+padding:10px 0;
+border-bottom:1px solid #eee;
+}
+
+.factores li:before{
+content:"✓";
+color:#2f5fe3;
+margin-right:10px;
+font-weight:bold;
+}
+
+.faq-item{
+margin-bottom:20px;
+padding-bottom:20px;
+border-bottom:1px solid #eee;
+}
+
+.faq-item h3{
+color:#2f5fe3;
+font-size:18px;
+margin-bottom:10px;
+}
+
+.cta{
+background:#0c1c3d;
+color:white;
+text-align:center;
+padding:50px 20px;
+margin-top:40px;
+}
+
+.cta-btn{
+margin-top:20px;
+display:inline-block;
+padding:15px 40px;
+background:#2f5fe3;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+font-size:16px;
+}
+
+footer{
+text-align:center;
+padding:30px 20px;
+font-size:14px;
+background:white;
+}
+
+footer a{
+color:#2f5fe3;
+text-decoration:none;
+margin:0 10px;
+}
+
+@media(max-width:600px){
+.app-btn{
+display:none;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Control Total Conductor</div>
+<a href="#" class="app-btn">App para conductores</a>
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+</header>
+
+<div class="hamburger" id="hamburger">
+<strong>Calculadoras</strong>
+<a href="calculadora-ganancias-uber.html">Ganancias Uber</a>
+<a href="calculadora-ganancias-didi.html">Ganancias Didi</a>
+<a href="calculadora-gasolina-km.html">Gasolina por km</a>
+<a href="calculadora-costo-viaje.html">Costo por viaje</a>
+<a href="calculadora-sueldo-hora.html">Sueldo por hora</a>
+<a href="calculadora-rentabilidad-auto.html">Rentabilidad auto</a>
+<a href="calculadora-comision-uber.html">Comisión Uber</a>
+<a href="calculadora-comision-didi.html">Comisión Didi</a>
+<a href="calculadora-depreciacion-auto.html">Depreciación auto</a>
+<a href="calculadora-mantenimiento-auto.html">Mantenimiento</a>
+<a href="calculadora-seguro-auto.html">Seguro auto</a>
+<a href="cuanto-gana-un-uber-en-mexico.html">Gana Uber México</a>
+<a href="cuanto-gana-un-didi-en-mexico.html">Gana Didi México</a>
+<a href="cuanto-gasta-un-uber-en-gasolina.html">Gasta gasolina Uber</a>
+<a href="cuanto-cuesta-trabajar-en-uber.html">Costo trabajar Uber</a>
+<a href="cuanto-se-paga-de-comision-uber.html">Paga comisión Uber</a>
+<a href="cuanto-cuesta-mantener-un-auto.html">Costo mantener auto</a>
+<a href="calculadora-gasto-semanal-auto.html">Gasto semanal</a>
+<a href="calculadora-ganancia-mensual.html">Ganancia mensual</a>
+<a href="calculadora-costo-total-conducir.html">Costo total conducir</a>
+</div>
+
+<section class="hero">
+
+<h1>Calculadora de costo por viaje auto</h1>
+
+</section>
+
+<div class="container">
+
+<section class="intro">
+
+<p>
+Como conductor de Uber o Didi, es esencial saber cuánto te cuesta realmente cada viaje que realizas. Esta calculadora te ayuda a conocer el costo operativo por viaje considerando gasolina, depreciación y mantenimiento, así podrás saber si las tarifas que te pagan son realmente rentables.
+</p>
+
+</section>
+
+<div class="calculator-box">
+
+<h2>Calculadora de costo por viaje</h2>
+
+<label>Distancia promedio por viaje (km)</label>
+<input id="distancia" type="number" placeholder="Ejemplo: 10">
+
+<label>Costo gasolina por km ($)</label>
+<input id="gasolina" type="number" placeholder="Ejemplo: 2.00" step="0.01">
+
+<label>Costo mantenimiento por km ($)</label>
+<input id="mantenimiento" type="number" placeholder="Ejemplo: 0.50" step="0.01">
+
+<label>Costo depreciación por km ($)</label>
+<input id="depreciacion" type="number" placeholder="Ejemplo: 0.30" step="0.01">
+
+<button class="calc-btn" onclick="calcular()">CALCULAR</button>
+
+<div class="resultado" id="resultado">$0 por viaje</div>
+
+</div>
+
+<section class="explicacion">
+
+<h2>Cómo funciona el cálculo</h2>
+
+<p>
+
+Esta calculadora suma todos los costos operativos por kilómetro (gasolina, mantenimiento y depreciación) y los multiplica por la distancia promedio de tus viajes. El resultado es el costo real que tienes cada vez que aceptas un viaje, sin considerar la comisión de la plataforma que se descuenta del pago del cliente.
+
+</p>
+
+</section>
+
+<section class="ejemplo">
+
+<h2>Ejemplo real para conductor CDMX</h2>
+
+<p>
+
+Un conductor que hace viajes de 10 km en promedio, con gasolina a $2/km, mantenimiento $0.50/km y depreciación $0.30/km:
+
+</p>
+
+<p><strong>Costo total por km:</strong> $2.00 + $0.50 + $0.30 = $2.80</p>
+<p><strong>Costo por viaje de 10 km:</strong> $2.80 × 10 = <strong>$28.00 por viaje</strong></p>
+
+<p>Si Uber paga $60 por ese viaje y cobra 25% de comisión ($15), tu ganancia sería: $60 - $15 - $28 = <strong>$17.00 netos por viaje</strong></p>
+
+</section>
+
+<section class="factores">
+
+<h2>Factores que afectan el costo por viaje</h2>
+
+<ul>
+
+<li><strong>Distancia del viaje:</strong> Viajes más largos tienen mayor costo absoluto pero mejor rendimiento</li>
+<li><strong>Consumo de gasolina:</strong> Autos eficientes reducen el costo por kilómetro</li>
+<li><strong>Estado del vehículo:</strong> Un auto bien mantenido gasta menos en reparaciones</li>
+<li><strong>Edad del auto:</strong> Autos más nuevos tienen mayor depreciación pero menos mantenimiento</li>
+<li><strong>Tipo de motor:</strong> Autos automáticos suelen consumir más que manuales</li>
+<li><strong>Condiciones de tráfico:</strong> Tráfico pesado aumenta tanto tiempo como costo de gasolina</li>
+
+</ul>
+
+</section>
+
+<section class="faq">
+
+<h2>Preguntas frecuentes</h2>
+
+<div class="faq-item">
+<h3>¿Cuál es el costo promedio por viaje de un conductor?</h3>
+<p>El costo promedio por viaje varía entre $20 y $45 dependiendo de la distancia (generalmente 8-15 km), tipo de auto y ciudad. La gasolina representa aproximadamente el 60-70% del costo.</p>
+</div>
+
+<div class="faq-item">
+<h3>¿Cómo calculo el costo de mantenimiento por km?</h3>
+<p>Divide tus gastos anuales de mantenimiento (cambios de aceite, neumáticos, reparaciones) entre los kilómetros que recorres al año. Como referencia, usa $0.40-$0.80 por km.</p>
+</div>
+
+<div class="faq-item">
+<h3>¿La depreciación se debe considerar en cada viaje?</h3>
+<p>Sí, la depreciación es un costo real. Cada kilómetro que recorres reduce el valor de tu auto. En promedio, considera $0.20-$0.50 por km según el valor y antigüedad de tu vehículo.</p>
+</div>
+
+<div class="faq-item">
+<h3>¿Viajes cortos o largos son más rentables?</h3>
+<p>Los viajes largos suelen ser más rentables porque el tiempo muerto (sin pasajero) es menor en proporción. Los viajes muy cortos incrementan el costo por kilómetro de operación.</p>
+</div>
+
+<div class="faq-item">
+<h3>¿Cuánto debería ganar por viaje para que sea rentable?</h3>
+<p>Si tu costo por viaje es $25, necesitas que la plataforma te pague al menos $45-$50 para cubrir comisión (25%) y tener una ganancia mínima aceptable de $8-$12 por viaje.</p>
+</div>
+
+</section>
+
+</div>
+
+<section class="cta">
+
+<h2>App para conductores</h2>
+<p>Estamos desarrollando la app Control Total Conductor para ayudarte a controlar ingresos, gasolina y rentabilidad real.</p>
+<a href="#" class="cta-btn">Próximamente — Regístrate aquí</a>
+
+</section>
+
+<footer>
+
+<p><strong>Calculadoras para conductores de Uber y DiDi</strong></p>
+<br>
+<a href="/faq.html">Política de privacidad</a> |
+<a href="/privacidad.html">Términos</a> |
+<a href="/cookies.html">Cookies</a> |
+<a href="/terminos.html">Contacto</a>
+
+</footer>
+
+<script>
+
+function toggleMenu(){
+document.getElementById('hamburger').classList.toggle('show');
+}
+
+function calcular(){
+let distancia=parseFloat(document.getElementById("distancia").value)||0
+let gasolina=parseFloat(document.getElementById("gasolina").value)||0
+let mantenimiento=parseFloat(document.getElementById("mantenimiento").value)||0
+let depreciacion=parseFloat(document.getElementById("depreciacion").value)||0
+
+let costoKm=gasolina+mantenimiento+depreciacion
+let costoViaje=costoKm*distancia
+
+document.getElementById("resultado").innerHTML="$"+costoViaje.toFixed(2)+" por viaje"
+}
+
+</script>
+
+</body>
+</html>

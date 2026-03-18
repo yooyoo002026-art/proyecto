@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculadora comisión Uber conductor | Comisiones 2024</title>
+<meta name="description" content="Calcula cuánto paga Uber de comisión por viaje. Descubre la comisión exacta que Uber cobra a los conductores en México.">
+<meta name="keywords" content="comisión Uber conductor, cuánto paga Uber de comisión, calculadora comisión Uber, porcentaje comisión Uber">
+
+<meta property="og:title" content="Control Total Conductor | Calculadora">
+<meta property="og:description" content="Calculadora para conductores de Uber, DiDi y repartidores. Estima ingresos, costos y rentabilidad real.">
+<meta property="og:image" content="/og-image.png">
+<meta property="og:type" content="website">
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f4f6f8;
+}
+
+header{
+background:white;
+padding:15px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:100;
+box-shadow:0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo{
+font-weight:bold;
+font-size:18px;
+}
+
+.app-btn{
+background:#2f5fe3;
+color:white;
+padding:12px 20px;
+border-radius:6px;
+text-decoration:none;
+font-weight:bold;
+margin:0 15px;
+}
+
+.menu-btn{
+font-size:24px;
+cursor:pointer;
+background:none;
+border:none;
+}
+
+.hamburger{
+display:none;
+position:fixed;
+top:15px;
+right:20px;
+z-index:1000;
+background:white;
+padding:15px;
+border-radius:8px;
+box-shadow:0 4px 20px rgba(0,0,0,0.15);
+min-width:250px;
+}
+
+.hamburger.show{
+display:block;
+}
+
+.hamburger a{
+display:block;
+padding:10px 0;
+color:#333;
+text-decoration:none;
+border-bottom:1px solid #eee;
+}
+
+.hamburger a:last-child{
+border-bottom:none;
+}
+
+.hero{
+text-align:center;
+padding:40px 20px;
+background:#fff;
+margin-bottom:20px;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+padding:0 20px 40px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+margin-bottom:25px;
+}
+
+.calculator-box{
+background:white;
+padding:30px 25px;
+border-radius:10px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+border:2px solid #2f5fe3;
+}
+
+input{
+width:100%;
+padding:14px;
+margin-top:10px;
+border:1px solid #ddd;
+border-radius:8px;
+font-size:16px;
+box-sizing:border-box;
+}
+
+label{
+font-weight:bold;
+color:#333;
+display:block;
+margin-top:15px;
+}
+
+button.calc-btn{
+margin-top:25px;
+width:100%;
+padding:16px;
+background:#2f5fe3;
+color:white;
+border:none;
+border-radius:8px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.resultado{
+text-align:center;
+margin-top:25px;
+font-size:28px;
+color:#2f5fe3;
+font-weight:bold;
+padding:20px;
+background:#f0f4ff;
+border-radius:8px;
+}
+
+section{
+margin-bottom:30px;
+}
+
+h2{
+color:#333;
+margin-bottom:15px;
+}
+
+.factores ul{
+list-style:none;
+padding:0;
+}
+
+.factores li{
+padding:10px 0;
+border-bottom:1px solid #eee;
+}
+
+.factores li:before{
+content:"✓";
+color:#2f5fe3;
+margin-right:10px;
+font-weight:bold;
+}
+
+.faq-item{
+margin-bottom:20px;
+padding-bottom:20px;
+border-bottom:1px solid #eee;
+}
+
+.faq-item h3{
+color:#2f5fe3;
+font-size:18px;
+margin-bottom:10px;
+}
+
+.cta{
+background:#0c1c3d;
+color:white;
+text-align:center;
+padding:50px 20px;
+margin-top:40px;
+}
+
+.cta-btn{
+margin-top:20px;
+display:inline-block;
+padding:15px 40px;
+background:#2f5fe3;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+font-size:16px;
+}
+
+footer{
+text-align:center;
+padding:30px 20px;
+font-size:14px;
+background:white;
+}
+
+footer a{
+color:#2f5fe3;
+text-decoration:none;
+margin:0 10px;
+}
+
+@media(max-width:600px){
+.app-btn{
+display:none;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Control Total Conductor</div>
+<a href="#" class="app-btn">App para conductores</a>
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+</header>
+
+<div class="hamburger" id="hamburger">
+<strong>Calculadoras</strong>
+<a href="calculadora-ganancias-uber.html">Ganancias Uber</a>
+<a href="calculadora-ganancias-didi.html">Ganancias Didi</a>
+<a href="calculadora-gasolina-km.html">Gasolina por km</a>
+<a href="calculadora-costo-viaje.html">Costo por viaje</a>
+<a href="calculadora-sueldo-hora.html">Sueldo por hora</a>
+<a href="calculadora-rentabilidad-auto.html">Rentabilidad auto</a>
+<a href="calculadora-comision-uber.html">Comisión Uber</a>
+<a href="calculadora-comision-didi.html">Comisión Didi</a>
+<a href="calculadora-depreciacion-auto.html">Depreciación auto</a>
+<a href="calculadora-mantenimiento-auto.html">Mantenimiento</a>
+<a href="calculadora-seguro-auto.html">Seguro auto</a>
+<a href="cuanto-gana-un-uber-en-mexico.html">Gana Uber México</a>
+<a href="cuanto-gana-un-didi-en-mexico.html">Gana Didi México</a>
+<a href="cuanto-gasta-un-uber-en-gasolina.html">Gasta gasolina Uber</a>
+<a href="cuanto-cuesta-trabajar-en-uber.html">Costo trabajar Uber</a>
+<a href="cuanto-se-paga-de-comision-uber.html">Paga comisión Uber</a>
+<a href="cuanto-cuesta-mantener-un-auto.html">Costo mantener auto</a>
+<a href="calculadora-gasto-semanal-auto.html">Gasto semanal</a>
+<a href="calculadora-ganancia-mensual.html">Ganancia mensual</a>
+<a href="calculadora-costo-total-conducir.html">Costo total conducir</a>
+</div>
+
+<section class="hero">
+
+<h1>Calculadora comisión Uber conductor</h1>
+
+</section>
+
+<div class="container">
+
+<section class="intro">
+
+<p>
+Saber exactamente cuánto paga Uber de comisión por viaje es fundamental para calcular tus ganancias reales. Esta calculadora te permite conocer cuánto dinero Uber se queda de cada viaje y cuánto llega realmente a tu bolsillo, para que puedas planificar mejor tus ingresos como conductor.
+</p>
+
+</section>
+
+<div class="calculator-box">
+
+<h2>Calculadora de comisión Uber</h2>
+
+<label>Pago del cliente por viaje ($)</label>
+<input id="pago" type="number" placeholder="Ejemplo: 80">
+
+<label>Porcentaje de comisión (%)</label>
+<input id="comision" type="number" placeholder="Ejemplo: 25" value="25">
+
+<label>Viajes por día</label>
+<input id="viajes" type="number" placeholder="Ejemplo: 15">
+
+<button class="calc-btn" onclick="calcular()">CALCULAR</button>
+
+<div class="resultado" id="resultado">$0</div>
+
+</div>
+
+<section class="explicacion">
+
+<h2>Cómo funciona el cálculo</h2>
+
+<p>
+
+La calculadora calcula la comisión de Uber multiplicando el pago del cliente por el porcentaje establecido. Luego, te muestra cuánto recibes por viaje después de la comisión y cuánto paga Uber en total por el número de viajes diarios que indicaste. Esto te ayuda a visualizar el costo real de la plataforma.
+
+</p>
+
+</section>
+
+<section class="ejemplo">
+
+<h2>Ejemplo real conductor CDMX</h2>
+
+<p>
+
+Un conductor quecobra $80 por viaje, con 25% de comisión, haciendo 15 viajes al día:
+
+</p>
+
+<p><strong>Pago cliente por viaje:</strong> $80</p>
+<p><strong>Comisión Uber por viaje:</strong> $80 × 25% = $20</p>
+<p><strong>Recibe el conductor:</strong> $80 - $20 = $60 por viaje</p>
+<p><strong>Comisión total del día:</strong> $20 × 15 viajes = <strong>$300 diarios</strong></p>
+<p><strong>Comisión mensual (26 días):</strong> $300 × 26 = <strong>$7,800 mensuales</strong></p>
+
+</section>
+
+<section class="factores">
+
+<h2>Factores que afectan la comisión de Uber</h2>
+
+<ul>
+
+<li><strong>Ciudad de operación:</strong> El porcentaje puede variar entre 20% y 30% según la ciudad</li>
+<li><strong>Tipo de servicio:</strong> UberX, UberXL y Uber Black pueden tener diferentes comisiones</li>
+<li><strong>Nuevos conductores:</strong> A veces ofrecen comisiones reducidas los primeros meses</li>
+<li><strong>Promociones:</strong> Uber puede temporalmente reducir comisiones en ciertas áreas</li>
+<li><strong>Tarifas dinámicas:</strong> En horas pico la comisión puede calcularse sobre el precio final amplificado</li>
+
+</ul>
+
+</section>
+
+<section class="faq">
+
+<h2>Preguntas frecuentes</h2>
+
+<div class="faq-item">
+<h3>¿Cuál es la comisión estándar de Uber en México?</h3>
+<p>La comisión estándar de Uber en México es de 25% del valor de cada viaje, aunque puede variar entre 20% y 30% dependiendo de la ciudad y circunstancias específicas.</p>
+</div>
+
+<div class="faq-item">
+<h3>¿Uber cobra comisión sobre propinas?</h3>
+<p>No, Uber no cobra comisión sobre las propinas que recibes de los pasajeros. El 100% de las propinas va directamente al conductor.</p>
+</div>
+
+<div class="faq-item">
+<h3>¿Puedo ver cuánto me cobran de comisión en cada viaje?</h3>
+<p>Sí, en la app de conductor puedes ver el desglose de cada viaje, incluyendo el monto total pagado por el pasajero, la comisión de Uber y tu ganancia neta.</p>
+</div>
+
+<div class="faq-item">
+<h3>¿La comisión incluye IVA?</h3>
+<p>Sí, la comisión de Uber ya incluye el IVA correspondiente. Es importante considerar esto al calcular tus ingresos declarables para fines fiscales.</p>
+</div>
+
+<div class="faq-item">
+<h3>¿Uber alguna vez reduce la comisión?</h3>
+<p>Ocasionalmente Uber ofrece promociones con comisiones reducidas para atraer conductores en ciertas áreas o horarios. También, nuevos conductores pueden recibir beneficios temporales.</p>
+</div>
+
+</section>
+
+</div>
+
+<section class="cta">
+
+<h2>App para conductores</h2>
+<p>Estamos desarrollando la app Control Total Conductor para ayudarte a controlar ingresos, gasolina y rentabilidad real.</p>
+<a href="#" class="cta-btn">Próximamente — Regístrate aquí</a>
+
+</section>
+
+<footer>
+
+<p><strong>Calculadoras para conductores de Uber y DiDi</strong></p>
+<br>
+<a href="/faq.html">Política de privacidad</a> |
+<a href="/privacidad.html">Términos</a> |
+<a href="/cookies.html">Cookies</a> |
+<a href="/terminos.html">Contacto</a>
+
+</footer>
+
+<script>
+
+function toggleMenu(){
+document.getElementById('hamburger').classList.toggle('show');
+}
+
+function calcular(){
+let pago=parseFloat(document.getElementById("pago").value)||0
+let comision=parseFloat(document.getElementById("comision").value)||25
+let viajes=parseFloat(document.getElementById("viajes").value)||0
+
+let comisionPorViaje=pago*(comision/100)
+let recibeConductor=pago-comisionPorViaje
+let comisionDiaria=comisionPorViaje*viajes
+
+let resultado="Comisión por viaje: $"+comisionPorViaje.toFixed(2)+"<br>"
+resultado+="Recibes por viaje: $"+recibeConductor.toFixed(2)+"<br>"
+if(viajes>0){
+resultado+="Comisión diaria: $"+comisionDiaria.toFixed(2)
+}
+
+document.getElementById("resultado").innerHTML=resultado
+}
+
+</script>
+
+</body>
+</html>
