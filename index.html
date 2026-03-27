@@ -1,190 +1,140 @@
 <!DOCTYPE html>
 <html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Total Conductor</title>
+    <meta name="description" content="La herramienta definitiva para conductores de apps">
+    <link rel="canonical" href="https://calculadora-conductor.pages.dev/">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- MENU GLOBAL -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="./index.html" class="text-xl font-bold text-blue-600">Control Total Conductor</a>
+                <div class="flex space-x-8">
+                    <span class="text-blue-600 font-bold">Home</span>
+                    <a href="./calculadora/index.html" class="text-gray-700 hover:text-blue-600 font-medium">Calculadora</a><a href="./guia/index.html" class="text-gray-700 hover:text-blue-600 font-medium">Guía</a><a href="./comparativas/index.html" class="text-gray-700 hover:text-blue-600 font-medium">Comparativas</a><a href="./hubs/index.html" class="text-gray-700 hover:text-blue-600 font-medium">hubs</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENIDO -->
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        <h1 class="text-4xl font-bold text-gray-900 mb-6">Control Total Conductor</h1>
+        <!DOCTYPE html>
+<html lang="es-MX">
 
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="google-site-verification" content="3jCOwcbfm2nfdLT6biy4xLW9QOa6FeFfUxffo9aKUS0" />
+<title>Calculadoras para conductores de apps en México | Ganancias Uber DiDi InDrive 2025</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description"
+content="Calculadoras gratuitas para conductores Uber, DiDi e InDrive en México. Calcula ganancias reales, costos por kilómetro, gasolina y rentabilidad 2025.">
 
-<title>Control Total Conductor | Calculadoras para conductores</title>
-
-<meta name="description" content="Calculadoras gratuitas para gasolina, ganancias, costo de viaje y sueldo por hora.">
-
-<meta name="keywords" content="calculadora gasolina, calculadora viaje, ganancias conductor, sueldo por hora">
-
-<meta name="robots" content="index, follow">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="canonical"
+href="https://calculadora-conductor.pages.dev">
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
-font-family:'Inter',sans-serif;
-background:#f6f8fb;
-color:#1f2937;
+font-family:Arial;
+background:#f5f7fa;
+margin:0;
 }
 
-.nav{
-background:white;
-border-bottom:1px solid #eee;
-}
-
-.nav-container{
-max-width:1100px;
+.container{
+max-width:900px;
 margin:auto;
-padding:18px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-weight:600;
-font-size:20px;
-}
-.logo a{text-decoration:none;color:inherit;}
-
-.nav-right{position:relative;}
-.dropdown{position:relative;}
-.dropdown-btn{
-background:#2563eb;
-color:white;
-border:none;
-padding:10px 16px;
-border-radius:8px;
-cursor:pointer;
-font-size:15px;
-font-family:inherit;
-display:inline-flex;
-align-items:center;
-gap:6px;
-}
-.dropdown-btn:hover{background:#1d4ed8;}
-.dropdown-panel{
-position:absolute;
-top:100%;
-right:0;
-margin-top:8px;
-background:white;
-border-radius:10px;
-box-shadow:0 10px 40px rgba(0,0,0,0.12);
-min-width:240px;
-padding:8px 0;
-z-index:100;
-display:none;
-flex-direction:column;
-}
-.dropdown-panel.open{display:flex;}
-.dropdown-panel a{
-padding:10px 18px;
-color:#1f2937;
-text-decoration:none;
-font-size:15px;
-text-align:left;
-}
-.dropdown-panel a:hover{background:#f3f4f6;color:#2563eb;}
-.dropdown-label{
-font-size:11px;
-text-transform:uppercase;
-letter-spacing:0.05em;
-color:#6b7280;
-padding:12px 18px 4px;
-font-weight:600;
+padding:20px;
 }
 
 .hero{
-text-align:center;
-padding:100px 20px;
+background:white;
+padding:40px;
+border-radius:14px;
+box-shadow:0px 4px 12px rgba(0,0,0,.08);
+margin-bottom:25px;
 }
 
-.hero h1{
-font-size:44px;
-margin-bottom:15px;
-}
-
-.hero p{
-font-size:18px;
-color:#6b7280;
-max-width:700px;
-margin:auto;
-}
-
-.tools{
-max-width:1000px;
-margin:auto;
-padding:60px 20px;
-}
-
-.grid{
+.cluster-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-margin-top:30px;
+grid-template-columns:1fr;
+gap:20px;
 }
 
-.card{
+.cluster-card{
 background:white;
 padding:30px;
 border-radius:14px;
-box-shadow:0 20px 40px rgba(0,0,0,0.08);
+box-shadow:0px 4px 12px rgba(0,0,0,.08);
 }
 
-.card h3{
-margin-bottom:10px;
+.cluster-card h2{
+margin-top:0;
 }
 
-.card p{
-color:#6b7280;
-margin-bottom:15px;
-}
-
-.card a{
+.cluster-card a{
 display:inline-block;
-background:#2563eb;
+margin-top:10px;
+text-decoration:none;
 color:white;
-padding:10px 16px;
-border-radius:8px;
+background:#2d6cdf;
+padding:12px 20px;
+border-radius:10px;
+}
+
+.top-links{
+background:white;
+padding:30px;
+border-radius:14px;
+box-shadow:0px 4px 12px rgba(0,0,0,.08);
+margin-top:25px;
+}
+
+.top-links a{
+display:block;
+margin:6px 0;
+color:#2d6cdf;
 text-decoration:none;
 }
 
-.app{
-background:#111827;
+.app-cta{
+background:#0b1a33;
 color:white;
 text-align:center;
-padding:80px 20px;
-margin-top:60px;
+padding:60px 25px;
+border-radius:14px;
+margin-top:40px;
 }
 
-.btn-app{
-display:inline-block;
-margin-top:20px;
-background:#2563eb;
-padding:14px 22px;
-border-radius:8px;
+.app-button{
+background:#2d6cdf;
+padding:16px 32px;
+font-size:18px;
+border-radius:12px;
+border:none;
 color:white;
-text-decoration:none;
+cursor:pointer;
 }
 
-.seo{
-max-width:800px;
-margin:auto;
-padding:60px 20px;
-line-height:1.7;
-}
-
-footer{
+.footer{
 text-align:center;
 padding:40px;
-color:#6b7280;
+background:#f2f2f2;
+margin-top:40px;
+}
+
+.footer a{
+margin:0 10px;
+color:#444;
+text-decoration:none;
 }
 
 </style>
@@ -193,196 +143,193 @@ color:#6b7280;
 
 <body>
 
-<header class="nav">
-<div class="nav-container">
-<div class="logo"><a href="/">Control Total Conductor</a></div>
-<div class="nav-right">
-<div class="dropdown">
-<button type="button" class="dropdown-btn" onclick="toggleNavMenu()" aria-expanded="false" aria-haspopup="true" id="navMenuBtn">Herramientas y más ▾</button>
-<div class="dropdown-panel" id="navMenuPanel">
-<a href="/">Inicio</a>
-<span class="dropdown-label">Calculadoras</span>
-<a href="calculadoras/ganancias-conductor.html">Ganancias conductor</a>
-<a href="calculadoras/gasolina-km.html">Gasolina por km</a>
-<a href="calculadoras/sueldo-hora.html">Sueldo por hora</a>
-<a href="calculadoras/costo-viaje.html">Costo de viaje</a>
-<a href="calculadoras/ganancias-app.html">Ganancias app</a>
-<a href="calculadoras/comision-app.html">Comisión app</a>
-<span class="dropdown-label">Sitio</span>
-<a href="faq/index.html">FAQ</a>
-<a href="legal/privacidad.html">Privacidad</a>
-<a href="legal/cookies.html">Cookies</a>
-<a href="legal/terminos.html">Términos</a>
-</div>
-</div>
-</div>
-</div>
-</header>
+<div class="container">
+
+
+<!-- HERO -->
 
 <section class="hero">
 
-<h1>
-Herramientas inteligentes para conductores
-</h1>
+<h1>Calculadoras para conductores de apps en México (2025)</h1>
 
 <p>
 
-Calcula gasolina, ganancias reales y el costo de tus viajes fácilmente.
+Calcula cuánto puedes ganar trabajando en Uber, DiDi o InDrive considerando gasolina, comisiones y costos reales por kilómetro. Estas herramientas gratuitas están diseñadas para conductores en México que buscan conocer su rentabilidad real antes de salir a trabajar.
 
 </p>
 
 </section>
 
-<section class="tools">
 
-<h2>Calculadoras disponibles</h2>
 
-<div class="grid">
+<!-- CLUSTERS -->
 
-<div class="card">
+<section class="cluster-grid">
 
-<h3>Calculadora de ganancias conductor</h3>
+<div class="cluster-card">
 
-<p>
-Descubre cuánto ganas realmente después de gasolina y gastos.
-</p>
-
-<a href="calculadoras/ganancias-conductor.html">
-Abrir calculadora
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>Calculadora gasolina por kilómetro</h3>
+<h2>Calculadoras</h2>
 
 <p>
-Calcula cuánto cuesta realmente cada kilómetro que conduces.
+
+Herramientas para estimar ganancias reales considerando comisiones, gasolina y kilómetros recorridos.
+
 </p>
 
-<a href="calculadoras/gasolina-km.html">
-Abrir calculadora
-</a>
+<a href="/calculadoras/">Ver calculadoras</a>
 
 </div>
 
-<div class="card">
 
-<h3>Calculadora sueldo por hora</h3>
+
+<div class="cluster-card">
+
+<h2>Guías para conductores</h2>
 
 <p>
-Descubre cuánto ganas realmente por cada hora trabajada.
+
+Consejos prácticos para mejorar ingresos, elegir horarios rentables y reducir gastos operativos.
+
 </p>
 
-<a href="calculadoras/sueldo-hora.html">
-Abrir calculadora
-</a>
+<a href="/guias/">Ver guías</a>
 
 </div>
 
-<div class="card">
 
-<h3>Calculadora ganancias Uber / Didi</h3>
-<p>Calcula tus ganancias reales después de gastos.</p>
 
-<a href="calculadoras/ganancias-app.html">
-Abrir calculadora
-</a>
+<div class="cluster-card">
 
-</div>
-
-<div class="card">
-
-<h3>Calculadora costo de viaje</h3>
+<h2>Comparativas entre apps</h2>
 
 <p>
-Calcula el gasto total de gasolina de cualquier viaje.
+
+Comparaciones reales entre Uber, DiDi e InDrive para decidir cuál conviene más según tu ciudad.
+
 </p>
 
-<a href="calculadoras/costo-viaje.html">
-Abrir calculadora
-</a>
-
-</div>
-
-<div class="card">
-
-<h3>Calculadora comision plataforma</h3>
-
-<p>
-Calcula comision Uber / DiDi.
-</p>
-
-<a href="calculadoras/comision-app.html">
-Abrir calculadora
-</a>
-
-</div>
+<a href="/comparativas/">Ver comparativas</a>
 
 </div>
 
 </section>
 
-<section class="app">
 
-<h2>App para conductores</h2>
+
+<!-- TOP HERRAMIENTAS -->
+
+<section class="top-links">
+
+<h2>Calculadoras más usadas</h2>
+
+<a href="/calculadoras/cuanto-gana-uber-en-mexico/">¿Cuánto gana Uber en México?</a>
+
+<a href="/calculadoras/cuanto-gana-didi-en-mexico/">¿Cuánto gana DiDi en México?</a>
+
+<a href="/calculadoras/comision-indrive-mexico/">Comisión InDrive México</a>
+
+<a href="/calculadoras/costo-por-km-auto/">Costo por kilómetro del auto</a>
+
+<a href="/calculadoras/gasolina-por-km/">Gasto de gasolina por kilómetro</a>
+
+</section>
+
+
+
+<!-- CTA APP -->
+
+<section class="app-cta">
+
+<h2>App completa para conductores</h2>
 
 <p>
 
-Estamos desarrollando la app <b>Control Total Conductor</b> para ayudarte a controlar ingresos, gasolina y rentabilidad real.
+La calculadora es solo el inicio.<br>
+La app <strong>Control Total Conductor</strong> te permite llevar control total de tu negocio como conductor.
 
 </p>
 
-<a class="btn-app" href="https://docs.google.com/forms/d/e/1FAIpQLScWlK9OJ0X5y0yKI0ZXIMJsLc8lsPyCjlfU8yRBy4n8pK0o0Q/viewform?usp=header" target="_blank">
+<a href="/app">
+
+<button class="app-button">
 
 Próximamente — Regístrate aquí
 
+</button>
+
 </a>
 
-</section>
-
-<section class="seo">
-
-<h2>Calculadoras para optimizar tus ingresos</h2>
-
 <p>
 
-Estas herramientas ayudan a calcular gastos de gasolina, ingresos reales y costos de conducción. Son útiles para conductores de aplicaciones, repartidores, viajeros y cualquier persona que quiera entender el costo real de conducir.
+🔥 Más de <strong>327 conductores</strong> ya están en lista de espera
 
 </p>
 
 </section>
 
-<footer>
 
-<p>
-Herramientas gratuitas para calcular ingresos y gastos
-</p>
-<p style="margin-top:12px;">
-<a href="faq/index.html" style="color:#6b7280;text-decoration:underline;">FAQ</a> ·
-<a href="legal/privacidad.html" style="color:#6b7280;text-decoration:underline;">Privacidad</a> ·
-<a href="legal/cookies.html" style="color:#6b7280;text-decoration:underline;">Cookies</a> ·
-<a href="legal/terminos.html" style="color:#6b7280;text-decoration:underline;">Términos</a>
-</p>
+</div>
+
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<a href="/faq">FAQ</a>
+
+·
+
+<a href="/privacidad">Privacidad</a>
+
+·
+
+<a href="/cookies">Cookies</a>
+
+·
+
+<a href="/terminos">Términos</a>
 
 </footer>
 
-<script>
-function toggleNavMenu(){
-var p=document.getElementById('navMenuPanel');
-var b=document.getElementById('navMenuBtn');
-p.classList.toggle('open');
-b.setAttribute('aria-expanded',p.classList.contains('open'));
-}
-document.addEventListener('click',function(e){
-if(!e.target.closest('.dropdown')){
-document.getElementById('navMenuPanel').classList.remove('open');
-document.getElementById('navMenuBtn').setAttribute('aria-expanded','false');
-}
-});
-</script>
 
 </body>
 
+</html>
+        
+        <div class="grid md:grid-cols-3 gap-6 mt-12">
+                    
+                <a href="./calculadora/index.html" class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">Calculadora</h2>
+                    <p class="text-gray-600">Herramientas de cálculo financiero</p>
+                </a>
+            
+                <a href="./guia/index.html" class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">Guía</h2>
+                    <p class="text-gray-600">Tutoriales y guías para conductores</p>
+                </a>
+            
+                <a href="./comparativas/index.html" class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">Comparativas</h2>
+                    <p class="text-gray-600">Comparaciones entre apps</p>
+                </a>
+            
+                <a href="./hubs/index.html" class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">hubs</h2>
+                    <p class="text-gray-600">Cluster hubs</p>
+                </a>
+            
+        </div>
+    </main>
+
+    <!-- FOOTER LEGAL -->
+    <footer class="bg-gray-800 text-white mt-20">
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <div class="flex flex-wrap justify-center gap-4 text-sm">
+                <a href="./faq/index.html" class="text-gray-500 hover:text-gray-700">FAQ - Preguntas Frecuentes</a> | <a href="./privacidad/index.html" class="text-gray-500 hover:text-gray-700">Política de Privacidad</a> | <a href="./cookies/index.html" class="text-gray-500 hover:text-gray-700">Política de Cookies</a> | <a href="./terminos/index.html" class="text-gray-500 hover:text-gray-700">Términos y Condiciones</a>
+            </div>
+            <p class="text-center text-gray-400 mt-4">© 2025 Control Total Conductor. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
 </html>
