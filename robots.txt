@@ -1,5 +1,4 @@
 User-agent: *
-
 Allow: /
 
 Sitemap: https://calculadora-conductor.pages.dev/sitemap.xml

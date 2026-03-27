@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mejor app para conductores | Guía clara para conductores en M…</title>
+    <meta name="description" content="Descubre mejor app para conductores con una guía clara para entender ingresos, costos, gasolina, comisiones y decisiones clave para conductores en México.">
+    <link rel="canonical" href="https://calculadora-conductor.pages.dev/guia/18-cuanto-se-gasta-en-gasolina-uber-guia-18/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Control Total Conductor">
+    <meta property="og:title" content="Mejor app para conductores | Guía clara para conductores en M…">
+    <meta property="og:description" content="Descubre mejor app para conductores con una guía clara para entender ingresos, costos, gasolina, comisiones y decisiones clave para conductores en México.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://calculadora-conductor.pages.dev/mejor-app-para-conductores-guia-17">
+    <meta property="og:image" content="https://calculadora-conductor.pages.dev/og-images/mejor-app-para-conductores-guia-17.svg">
+    <meta property="og:image:alt" content="Mejor app para conductores">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:site_name" content="Control Total Conductor">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mejor app para conductores | Guía clara para conductores en M…">
+    <meta name="twitter:description" content="Descubre mejor app para conductores con una guía clara para entender ingresos, costos, gasolina, comisiones y decisiones clave para conductores en México.">
+    <meta name="twitter:image" content="https://calculadora-conductor.pages.dev/og-images/mejor-app-para-conductores-guia-17.svg">
+    <style>
+    body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f4f6fb;color:#0f172a;line-height:1.65}
+    header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:#fff;border-bottom:1px solid #dbe2f0;position:sticky;top:0;z-index:50}
+    a{text-decoration:none;color:#2563eb}
+    .container{max-width:980px;margin:auto;padding:20px}
+    .hero{background:linear-gradient(135deg,#eff6ff,#dbeafe);padding:28px;border-radius:24px;margin-top:12px}
+    .hero h1{font-size:2.2rem;line-height:1.15;margin:14px 0 10px}
+    .hero p{margin:0;color:#334155;font-size:1.05rem}
+    .badge{display:inline-block;background:#059669;color:#fff;padding:8px 14px;border-radius:999px;font-size:12px;font-weight:700}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+    .chip{background:#fff;color:#334155;padding:8px 12px;border-radius:999px;font-size:13px;border:1px solid #dbe2f0}
+    .grid{display:grid;gap:16px}.grid-2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .card{background:#fff;padding:24px;border-radius:18px;margin-top:20px;box-shadow:0 10px 30px rgba(15,23,42,.06)}
+    .soft{background:#fff8e8;border-left:5px solid #f59e0b}
+    .mini-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .mini-card{background:#fff;border:1px solid #dbe2f0;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px}
+    .mini-card.current{border-color:#059669;box-shadow:0 0 0 3px rgba(37,99,235,.08)}
+    .mini-card h3{margin:0;font-size:1rem}
+    .mini-card p{margin:0;color:#475569;font-size:14px}
+    .mini-badge{display:inline-block;background:#eef2ff;color:#312e81;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700;width:max-content}
+    .current-label{color:#059669;font-weight:700}
+    .cta{background:#0f172a;color:#fff;text-align:center;padding:44px 24px;margin:40px auto 0;border-radius:22px;max-width:980px}
+    .footer{text-align:center;padding:32px 20px;font-size:14px;color:#475569}
+    .breadcrumbs{font-size:14px;color:#64748b;margin-bottom:12px}
+    .link-list{padding-left:20px}.link-list li{margin:10px 0}.link-list span{display:block;color:#64748b;font-size:13px;margin-top:4px}
+    .faq-item{padding:14px 0;border-bottom:1px solid #e2e8f0}.faq-item:last-child{border-bottom:none}.faq-item p{margin:6px 0 0;color:#475569}
+    input{width:100%;padding:12px;margin:8px 0;border:1px solid #cbd5e1;border-radius:10px;box-sizing:border-box;font-size:16px}
+    .calc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:14px}.calc-label{display:block;font-weight:700;color:#0f172a}.calc-label span{display:block;margin-bottom:6px}.calc-label input{margin:0}.muted{color:#475569}
+    .btn{background:#2563eb;color:#fff;padding:12px 18px;border-radius:12px;border:none;cursor:pointer;font-weight:700;display:inline-block}
+    .result-box{display:none;background:#ecfdf5;padding:18px;border-radius:16px;margin-top:18px;border:1px solid #bbf7d0}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-top:14px}
+    .stat{background:#fff;padding:14px;border-radius:12px;text-align:center}.stat strong{display:block;font-size:1.35rem}
+    table{width:100%;border-collapse:collapse}.table-wrap{overflow:auto} td,th{padding:10px 0;border-bottom:1px solid #e2e8f0;text-align:left;vertical-align:top}
+    .share-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.share-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid #dbe2f0;background:#fff;color:#0f172a;font-weight:700}.share-btn svg{width:18px;height:18px;fill:currentColor}
+    .share-note{font-size:13px;color:#64748b;margin-top:10px}
+  </style>
+    
+</head>
+<body>
+
+<!-- Global Navigation - Auto Generated -->
+<nav style="background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 1rem 0; position: sticky; top: 0; z-index: 999;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; justify-content: space-between; align-items: center;">
+        <a href="../../index.html" style="font-size: 1.25rem; font-weight: 700; color: #2563eb; text-decoration: none;">Control Total Conductor</a>
+        <div style="display: flex; gap: 1.5rem; align-items: center;">
+            <a href="../../index.html" style="color: #374151; text-decoration: none; font-weight: 500;">Home</a>
+            <a href="../../calculadora/index.html" style="color: #374151; text-decoration: none; font-weight: 500; ">Calculadora</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../../guia/index.html" style="color: #374151; text-decoration: none; font-weight: 500; border-bottom: 2px solid #2563eb;">Guía</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../../comparativas/index.html" style="color: #374151; text-decoration: none; font-weight: 500; ">Comparativas</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../../hubs/index.html" style="color: #374151; text-decoration: none; font-weight: 500; ">hubs</a>
+        </div>
+    </div>
+    
+    <div style="background: #f3f4f6; border-top: 1px solid #e5e7eb; padding: 0.5rem 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; gap: 1rem; align-items: center; overflow-x: auto;">
+            <span style="font-size: 0.875rem; font-weight: 600; color: #4b5563;">Páginas hermanas:</span>
+            <a href="../02-cuanto-gana-didi-en-mexico-guia-2/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Cuánto gana un Uber en México | Guía clara para conductores e…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../03-comision-indrive-mexico-guia-3/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Cuánto gana Didi en México | Guía clara para conductores en M…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../04-costo-por-km-auto-guia-4/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Comisión Indrive México | Guía clara para conductores en Méxi…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../05-gasolina-por-km-guia-5/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Costo-por-km-auto | Guía clara para conductores en México</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../06-cuanto-gana-uber-por-dia-guia-6/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Gasolina por km | Guía clara para conductores en México</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../07-cuanto-gana-didi-por-dia-guia-7/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Cuánto gana Uber por día | Guía clara para conductores en Méx…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../08-cuanto-gana-indrive-por-dia-guia-8/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Cuánto gana Didi por día | Guía clara para conductores en Méx…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../09-ganancias-uber-semana-guia-9/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Cuánto gana InDrive por día | Guía clara para conductores en…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../10-ganancias-didi-semana-guia-10/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Ganancias Uber semana | Guía clara para conductores en México</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../11-ganancias-indrive-semana-guia-11/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Ganancias Didi semana | Guía clara para conductores en México</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../12-cuanto-se-paga-comision-uber-guia-12/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Ganancias indrive semana | Guía clara para conductores en Méx…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../13-cuanto-se-paga-comision-didi-guia-13/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Cuanto-se-paga-comision-Uber | Guía clara para conductores en…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../14-comparativa-uber-vs-didi-guia-14/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Cuánto se paga comisión Didi | Guía clara para conductores en…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../15-comparativa-didi-vs-indrive-guia-15/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Comparativa Uber vs Didi | Guía clara para conductores en Méx…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../16-comparativa-uber-vs-indrive-guia-16/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Comparativa Didi vs Indrive | Guía clara para conductores en…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../17-mejor-app-para-conductores-guia-17/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Comparativa Uber vs indrive | Guía clara para conductores en…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../19-cuanto-se-gasta-en-gasolina-didi-guia-19/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Cuánto se gasta en gasolina Uber | Guía clara para conductore…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../20-rentabilidad-uber-mexico-guia-20/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Cuánto se gasta en gasolina Didi | Guía clara para conductore…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../21-rentabilidad-didi-mexico-guia-21/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Rentabilidad Uber méxico | Guía clara para conductores en Méx…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../22-rentabilidad-indrive-mexico-guia-22/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Rentabilidad Didi méxico | Guía clara para conductores en Méx…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../23-cuanto-deja-uber-por-km-guia-23/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Rentabilidad indrive México | Guía clara para conductores en…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../24-cuanto-deja-didi-por-km-guia-24/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Cuánto deja Uber por km | Guía clara para conductores en Méxi…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../25-cuanto-deja-indrive-por-km-guia-25/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Cuánto deja Didi por km | Guía clara para conductores en Méxi…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../26-cuanto-se-gana-hora-uber-guia-26/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Cuánto deja Indrive por km | Guía clara para conductores en M…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../27-cuanto-se-gana-hora-didi-guia-27/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Cuánto se gana hora Uber | Guía clara para conductores en Méx…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../28-cuanto-se-gana-hora-indrive-guia-28/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Cuánto se gana hora Didi | Guía clara para conductores en Méx…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../29-cuanto-cuesta-mantenimiento-auto-app-guia-29/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Cuánto se gana hora indrive | Guía clara para conductores en…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../30-mejor-horario-trabajar-uber-guia-30/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Cuánto cuesta mantenimiento auto app | Guía clara para conduc…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../31-mejor-horario-trabajar-didi-guia-31/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Mejor horario trabajar Uber | Guía clara para conductores en…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../32-cuanto-se-gana-fin-semana-uber-guia-32/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Mejor horario trabajar Didi | Guía clara para conductores en…</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a href="../33-cuanto-se-gana-fin-semana-didi-guia-33/index.html" style="color: #6b7280; text-decoration: none; font-size: 0.875rem;">Cuánto se gana fin semana Uber | Guía clara para conductores…</a>
+        </div>
+    </div>
+</nav>
+<!-- End Global Navigation -->
+
+
+  <header>
+    <strong>Control Total Conductor</strong>
+    <span class="badge">📘 Guía</span>
+  </header>
+  
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="/">Inicio</a> › <a href="/guia">Guía</a> › <span>Mejor app para conductores</span>
+      </div>
+      <div class="hero">
+        <span class="badge">📘 Guía</span>
+        <h1>Mejor app para conductores</h1>
+        <p>Landing conectada con hub del tema, páginas hermanas y rutas adicionales para fortalecer posicionamiento, retención y descubrimiento del contenido.</p>
+        <div class="chips">
+          <span class="chip">SEO semántico</span>
+          <span class="chip">Interlinking activo</span>
+          <span class="chip">Ruta completa</span>
+          <span class="chip">Contenido útil</span>
+        </div>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card soft">
+          <h2>Respuesta rápida</h2>
+          <p>Entender mejor app para conductores requiere mirar más allá del depósito del día. También debes revisar horas efectivas de trabajo, kilómetros vacíos, combustible, comisiones, desgaste del auto y hábitos operativos que afectan tu ingreso neto en México.</p>
+          <p>La idea es que el visitante entienda el contexto antes de usar la herramienta o tomar una decisión, y luego complete la ruta con las demás piezas del mismo topic.</p>
+        </div>
+        <div class="card">
+          <h2>Ruta recomendada del tema</h2>
+          <ul>
+            <li>1. Revisa esta página para resolver la intención principal.</li>
+            <li>2. Abre el hub del tema para ver la ruta completa.</li>
+            <li>3. Recorre calculadora, guía y comparativa como piezas hermanas.</li>
+            <li>4. Sigue con hubs del cluster y topics relacionados.</li>
+          </ul>
+        </div>
+      </div>
+
+      
+    <div class="card" id="calculadora">
+      <h2>Calculadora comparativa App A vs App B</h2>
+      <p class="muted">Esta versión compara dos opciones en paralelo para que veas cuál deja mejor margen estimado después de comisión y gastos directos.</p>
+      <div class="calc-grid">
+        
+              <label class="calc-label" for="v1">
+                <span>Ingreso bruto en App A</span>
+                <input id="v1" type="number" min="0" step="0.01" placeholder="Ejemplo: 2100">
+              </label>
+            
+              <label class="calc-label" for="v2">
+                <span>Comisión de App A (%)</span>
+                <input id="v2" type="number" min="0" step="0.01" placeholder="Ejemplo: 25">
+              </label>
+            
+              <label class="calc-label" for="v3">
+                <span>Gastos operativos en App A</span>
+                <input id="v3" type="number" min="0" step="0.01" placeholder="Ejemplo: 420">
+              </label>
+            
+              <label class="calc-label" for="v4">
+                <span>Ingreso bruto en App B</span>
+                <input id="v4" type="number" min="0" step="0.01" placeholder="Ejemplo: 1950">
+              </label>
+            
+              <label class="calc-label" for="v5">
+                <span>Comisión de App B (%)</span>
+                <input id="v5" type="number" min="0" step="0.01" placeholder="Ejemplo: 18">
+              </label>
+            
+              <label class="calc-label" for="v6">
+                <span>Gastos operativos en App B</span>
+                <input id="v6" type="number" min="0" step="0.01" placeholder="Ejemplo: 390">
+              </label>
+            
+              <label class="calc-label" for="v7">
+                <span>Horas trabajadas</span>
+                <input id="v7" type="number" min="0" step="0.01" placeholder="Ejemplo: 8">
+              </label>
+            
+      </div>
+      <button class="btn" onclick="calcular()">Comparar escenarios</button>
+      <div id="resultado-container" class="result-box">
+        <h3 id="result-heading">Comparativa de resultados</h3>
+        <table>
+          <tbody id="result-rows"></tbody>
+        </table>
+        <div class="stats" id="result-stats"></div>
+        <p id="res-consejo"></p>
+      </div>
+    </div>
+  
+    </div>
+
+    <div class="cta">
+      <h2 style="font-size:clamp(26px,5vw,38px);font-weight:900;margin:0 0 12px">App completa para conductores</h2>
+      <p style="font-size:16px;opacity:.9;margin:0 0 6px">La calculadora es solo el inicio.</p>
+      <p style="font-size:16px;opacity:.9;margin:0 0 28px">La app <strong>Control Total Conductor</strong> te permite llevar control total de tu negocio como conductor.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScWlK9OJ0X5y0yKI0ZXIMJsLc8lsPyCjlfU8yRBy4n8pK0o0Q/viewform?usp=header" target="_blank" rel="noopener" style="display:inline-block;background:#3b82f6;color:#fff;font-size:18px;font-weight:700;padding:16px 40px;border-radius:14px;text-decoration:none;box-shadow:0 4px 20px rgba(59,130,246,.45);transition:transform .2s,box-shadow .2s" onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 6px 28px rgba(59,130,246,.6)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(59,130,246,.45)'">Próximamente — Regístrate aquí</a>
+      <p style="margin-top:22px;font-size:15px">🔥 <span style="color:#f87171">Más de <strong>327 conductores</strong> ya están en lista de espera</span></p>
+    </div>
+
+    <div class="container">
+      <h2>Qué debes saber sobre Mejor app para conductores</h2>
+      <p>Una landing fuerte no solo debe posicionar; también debe resolver. Cuando el usuario encuentra contexto, respuesta rápida, ejemplos, comparativas y herramientas en una sola ruta, pasa más tiempo en el sitio, navega entre contenidos relacionados y entiende mejor cómo aplicar la información a su operación diaria. Ese comportamiento mejora retención, señales de utilidad y autoridad temática para búsquedas relacionadas con conductores de apps en México. Muchos choferes revisan únicamente el depósito del día, pero no llevan una lectura real de su utilidad. Ahí aparece el error más costoso: creer que ingreso es lo mismo que ganancia. En realidad, cualquier análisis serio debe separar combustible, desgaste del auto, comisiones, horas improductivas y estrategia de trabajo. Esa diferencia entre percepción e ingreso neto es la base de cualquier página SEO útil sobre economía del conductor. Las guías también son excelentes para reforzar la autoridad del sitio porque permiten desarrollar conceptos con profundidad, responder objeciones, ampliar preguntas frecuentes y conectar naturalmente con calculadoras y comparativas. Esa capa educativa hace que el ecosistema sea más sólido y que cada página tenga una función clara dentro del recorrido del usuario. Una guía debe transformar una duda en un plan. El usuario no solo quiere leer una explicación, sino entender qué revisar primero, qué medir después y qué errores debe evitar. Cuando esa secuencia se presenta con claridad, la página gana utilidad real y puede posicionar por consultas informativas amplias, consejos, mejores prácticas y estrategias para conductores. En esta pieza trabajamos específicamente mejor app para conductores con un enfoque de guía, usando lenguaje natural para cubrir dudas sobre ingresos, costos, comisiones, rendimiento, márgenes y decisiones reales del conductor en México.</p>
+
+      <h2>Cómo funciona</h2>
+      <p>Esta guía funciona como una ruta práctica. En lugar de limitarse a dar una recomendación genérica, organiza el tema en pasos lógicos: qué revisar, qué medir, qué corregir y qué monitorear con frecuencia. Esa estructura ayuda a convertir una duda puntual en una metodología repetible y mejora la utilidad real del contenido.</p>
+
+      <h2>Ejemplo</h2>
+      <p>Ejemplo práctico: un conductor que revisa mejor app para conductores descubre que trabaja demasiadas horas en baja demanda. En vez de operar de manera continua durante 12 horas, reorganiza su jornada para concentrarse en horas pico, reduce kilómetros vacíos, mejora el uso de combustible y eleva su ingreso neto sin necesidad de aumentar el tiempo total al volante.</p>
+
+      <div class="card">
+        <h2>Ángulos específicos que sí mueven la búsqueda</h2>
+        <p>Además del enfoque general sobre mejor app para conductores, conviene responder subtemas que el usuario suele buscar justo antes o justo después de tomar una decisión. Esa profundidad semántica ayuda a ampliar cobertura y evita que la página se quede en una respuesta demasiado genérica.</p>
+        <ul>
+          <li>Qué diferencia a una app de otra en demanda, flexibilidad y tarifas</li><li>Cómo cambia la rentabilidad según ciudad, tráfico y zonas de alta demanda</li>
+        </ul>
+      </div>
+
+      
+    <div class="card">
+      <h2>Ruta práctica de implementación</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Paso</th>
+              <th>Acción recomendada</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+                  <tr>
+                    <td>Paso 1</td>
+                    <td>Separar ingreso bruto, comisión, gasolina y mantenimiento</td>
+                  </tr>
+                
+                  <tr>
+                    <td>Paso 2</td>
+                    <td>Comparar jornadas rentables y poco rentables</td>
+                  </tr>
+                
+                  <tr>
+                    <td>Paso 3</td>
+                    <td>Medir tiempo efectivo y kilómetros vacíos</td>
+                  </tr>
+                
+                  <tr>
+                    <td>Paso 4</td>
+                    <td>Revisar el cierre semanal y corregir hábitos</td>
+                  </tr>
+                
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+
+      <h2>Pasos recomendados para aplicar esta guía</h2>
+      <p>La mejor forma de trabajar mejor app para conductores es llevar el tema a una rutina simple. Primero identifica cuánto entra realmente por día. Después separa gasolina, comisión y mantenimiento. Luego compara esos números con tus horas efectivas y con la cantidad de kilómetros recorridos. Con esa base ya puedes detectar qué horario, qué zona o qué plataforma te está dejando menos margen. Esta secuencia ayuda a convertir una duda general en decisiones prácticas y sostenibles en la operación diaria.</p>
+
+      <h2>Consejos que suelen mejorar el margen neto</h2>
+      <p>Los mejores resultados normalmente aparecen cuando el conductor reduce kilómetros vacíos, concentra su jornada en horas con demanda más alta y evita jornadas largas en horarios flojos. También ayuda medir el consumo real de combustible por zona, revisar incentivos antes de salir y comparar el rendimiento semanal en lugar de confiar solo en un día bueno o malo. Una guía útil debe traducirse en acciones sencillas, medibles y repetibles.</p>
+
+      <h2>Checklist rápido para mejorar resultados</h2>
+      <ul>
+        <li>Anota ingresos y gastos todos los días</li><li>Compara horarios rentables y horarios flojos</li><li>Reduce kilómetros vacíos siempre que sea posible</li><li>Mide uso real del vehículo por zona</li><li>Revisa semanalmente tu ganancia neta y no solo el bruto</li>
+      </ul>
+
+      
+      <div class="card">
+        <h2>Errores comunes que esta guía te ayuda a evitar</h2>
+        <ul>
+          <li>Tomar decisiones con base en un solo día bueno o malo.</li>
+          <li>Ignorar el tiempo muerto entre viajes.</li>
+          <li>No separar el gasto operativo del dinero disponible.</li>
+          <li>Trabajar más horas sin verificar si el margen mejora.</li>
+          <li>Depender de intuición en lugar de medir resultados semanales.</li>
+        </ul>
+      </div>
+    
+
+      <div class="card">
+        <h2>Ruta superior del topic y del cluster</h2>
+        <p>Estas páginas ayudan a que el usuario no se quede aislado en una sola URL y facilitan una navegación más útil dentro del ecosistema.</p>
+        <div class="mini-grid">
+          
+        <div class="mini-card ">
+          <span class="mini-badge">🧭 Hub del tema</span>
+          <h3>Todo sobre Mejor app para conductores</h3>
+          <p>Centraliza calculadora, guía, comparativa y enlaces recomendados del mismo tema.</p>
+          <a href="/mejor-app-para-conductores-hub-17">Abrir página</a>
+        </div>
+      
+        <div class="mini-card ">
+          <span class="mini-badge">🧮 Calculadora</span>
+          <h3>Mejor app para conductores</h3>
+          <p>Valida ingresos, costos y utilidad neta</p>
+          <a href="/mejor-app-para-conductores-calculadora-17">Abrir página</a>
+        </div>
+      
+        <div class="mini-card ">
+          <span class="mini-badge">⚖️ Comparativa</span>
+          <h3>Mejor app para conductores</h3>
+          <p>Contrasta opciones y escenarios reales</p>
+          <a href="/mejor-app-para-conductores-comparativa-17">Abrir página</a>
+        </div>
+      
+        <div class="mini-card ">
+          <span class="mini-badge">🧭 Hub del tema</span>
+          <h3>Todo sobre Mejor app para conductores</h3>
+          <p>Centraliza calculadora, guía, comparativa y enlaces recomendados del mismo tema.</p>
+          <a href="/mejor-app-para-conductores-hub-17">Abrir página</a>
+        </div>
+      
+        <div class="mini-card ">
+          <span class="mini-badge">📘 Hub del cluster</span>
+          <h3>Guías para conductores en México</h3>
+          <p>Reúne todas las guías del ecosistema en una sola ruta.</p>
+          <a href="/hub-guia">Abrir página</a>
+        </div>
+      
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Más guía del cluster</h2>
+        <ul class="link-list">
+          
+        <li>
+          <a href="/cuanto-se-gasta-en-gasolina-uber-guia-18">📘 Guía · ¿Cuánto se gasta en gasolina Uber?</a>
+          <span>Explica el proceso paso a paso</span>
+        </li>
+      
+        <li>
+          <a href="/cuanto-se-gasta-en-gasolina-didi-guia-19">📘 Guía · ¿Cuánto se gasta en gasolina Didi?</a>
+          <span>Explica el proceso paso a paso</span>
+        </li>
+      
+        <li>
+          <a href="/rentabilidad-uber-mexico-guia-20">📘 Guía · Rentabilidad Uber méxico</a>
+          <span>Explica el proceso paso a paso</span>
+        </li>
+      
+        <li>
+          <a href="/rentabilidad-didi-mexico-guia-21">📘 Guía · Rentabilidad Didi méxico</a>
+          <span>Explica el proceso paso a paso</span>
+        </li>
+      
+        <li>
+          <a href="/rentabilidad-indrive-mexico-guia-22">📘 Guía · Rentabilidad indrive México</a>
+          <span>Explica el proceso paso a paso</span>
+        </li>
+      
+        <li>
+          <a href="/cuanto-deja-uber-por-km-guia-23">📘 Guía · ¿Cuánto deja Uber por km?</a>
+          <span>Explica el proceso paso a paso</span>
+        </li>
+      
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Sugerencias relacionadas por topic</h2>
+        <ul class="link-list">
+          
+        <li>
+          <a href="/rentabilidad-uber-mexico-hub-20">🧭 Hub del tema · Todo sobre Rentabilidad Uber méxico</a>
+          <span>Centraliza calculadora, guía, comparativa y enlaces recomendados del mismo tema.</span>
+        </li>
+      
+        <li>
+          <a href="/rentabilidad-didi-mexico-hub-21">🧭 Hub del tema · Todo sobre Rentabilidad Didi méxico</a>
+          <span>Centraliza calculadora, guía, comparativa y enlaces recomendados del mismo tema.</span>
+        </li>
+      
+        <li>
+          <a href="/rentabilidad-indrive-mexico-hub-22">🧭 Hub del tema · Todo sobre Rentabilidad indrive México</a>
+          <span>Centraliza calculadora, guía, comparativa y enlaces recomendados del mismo tema.</span>
+        </li>
+      
+        <li>
+          <a href="/cuanto-deja-uber-por-km-hub-23">🧭 Hub del tema · Todo sobre Cuánto deja Uber por km</a>
+          <span>Centraliza calculadora, guía, comparativa y enlaces recomendados del mismo tema.</span>
+        </li>
+      
+        <li>
+          <a href="/cuanto-deja-didi-por-km-hub-24">🧭 Hub del tema · Todo sobre Cuánto deja Didi por km</a>
+          <span>Centraliza calculadora, guía, comparativa y enlaces recomendados del mismo tema.</span>
+        </li>
+      
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Compartir esta página</h2>
+        <p>Si este contenido te sirvió, compártelo usando el enlace canónico una vez publicado.</p>
+        <div class="share-row">
+          <a class="share-btn" href="#" onclick="shareSocial('whatsapp');return false;" aria-label="Compartir en WhatsApp"><svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.07 0C5.5 0 .16 5.34.16 11.91c0 2.1.55 4.15 1.6 5.95L0 24l6.31-1.65a11.86 11.86 0 0 0 5.76 1.47h.01c6.57 0 11.91-5.34 11.91-11.91 0-3.18-1.24-6.17-3.47-8.43Z"></path></svg><span>WhatsApp</span></a>
+          <a class="share-btn" href="#" onclick="shareSocial('facebook');return false;" aria-label="Compartir en Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.02 4.39 10.99 10.12 11.9v-8.41H7.08v-3.49h3.04V9.41c0-3.02 1.79-4.69 4.54-4.69 1.32 0 2.7.24 2.7.24v2.97h-1.52c-1.5 0-1.97.93-1.97 1.89v2.26h3.35l-.54 3.49h-2.81V24C19.61 23.06 24 18.09 24 12.07Z"></path></svg><span>Facebook</span></a>
+          <a class="share-btn" href="#" onclick="shareSocial('x');return false;" aria-label="Compartir en X"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.26l-4.9-6.41L6.43 22H3.32l7.24-8.27L.8 2h6.36l4.43 5.86L18.9 2Z"></path></svg><span>X</span></a>
+          <a class="share-btn" href="#" onclick="shareSocial('telegram');return false;" aria-label="Compartir en Telegram"><svg viewBox="0 0 24 24"><path d="M9.78 18.65 9.4 23.2c.54 0 .78-.23 1.07-.5l2.57-2.45 5.33 3.9c.98.54 1.67.26 1.93-.9L23.8 2.9c.35-1.42-.51-1.97-1.46-1.62L1.6 9.35c-1.4.55-1.38 1.33-.24 1.68l5.3 1.65L18.98 4.9"></path></svg><span>Telegram</span></a>
+          <a class="share-btn" href="#" onclick="copyShareLink();return false;" aria-label="Copiar enlace"><svg viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Z"></path></svg><span>Copiar enlace</span></a>
+        </div>
+        <div class="share-note" id="share-note">Comparte esta landing con el enlace canónico una vez publicada.</div>
+      </div>
+
+      <h2>Preguntas frecuentes</h2>
+      <div id="faq-content">
+        
+        <div class="faq-item">
+          <strong>¿Para qué sirve esta página sobre Mejor app para conductores?</strong>
+          <p>Sirve para resolver una intención de búsqueda concreta alrededor de mejor app para conductores y conectar al usuario con una ruta de contenidos complementarios dentro del ecosistema: calculadora, guía, comparativa y hub del tema.</p>
+        </div>
+      
+        <div class="faq-item">
+          <strong>¿Aplica para conductores en México?</strong>
+          <p>Sí. El contenido está escrito pensando en conductores de Uber, Didi, InDriver, Cabify y otras plataformas que operan en ciudades mexicanas como CDMX, Monterrey, Guadalajara, Puebla, Querétaro y Tijuana.</p>
+        </div>
+      
+        <div class="faq-item">
+          <strong>¿Por qué esta página enlaza con otras del mismo tema?</strong>
+          <p>Porque forma parte de un cluster SEO. Cada pieza ataca una intención distinta y, juntas, fortalecen la autoridad temática del sitio y mejoran la navegación del usuario.</p>
+        </div>
+      
+        <div class="faq-item">
+          <strong>¿Qué debo revisar además de esta página?</strong>
+          <p>Te conviene revisar la calculadora, la guía, la comparativa y el hub de mejor app para conductores para tener una visión más completa del tema.</p>
+        </div>
+      
+        <div class="faq-item">
+          <strong>¿Esta guía sirve para nuevos conductores?</strong>
+          <p>Sí. Está pensada tanto para personas que comienzan como para choferes con experiencia que buscan ordenar mejor costos, tiempos y estrategia.</p>
+        </div>
+      
+        <div class="faq-item">
+          <strong>¿También aplica para otras apps?</strong>
+          <p>Sí. Aunque cambien comisiones o incentivos, la lógica de revisar ingresos, gastos y rendimiento operativo sigue siendo útil para Uber, Didi, InDriver y opciones similares.</p>
+        </div>
+      
+      </div>
+    </div>
+  
+  <div class="footer">
+    <p>Herramientas gratuitas para conductores en México.</p>
+    <p>Privacidad · Cookies · Términos</p>
+  </div>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Para qué sirve esta página sobre Mejor app para conductores?","acceptedAnswer":{"@type":"Answer","text":"Sirve para resolver una intención de búsqueda concreta alrededor de mejor app para conductores y conectar al usuario con una ruta de contenidos complementarios dentro del ecosistema: calculadora, guía, comparativa y hub del tema."}},{"@type":"Question","name":"¿Aplica para conductores en México?","acceptedAnswer":{"@type":"Answer","text":"Sí. El contenido está escrito pensando en conductores de Uber, Didi, InDriver, Cabify y otras plataformas que operan en ciudades mexicanas como CDMX, Monterrey, Guadalajara, Puebla, Querétaro y Tijuana."}},{"@type":"Question","name":"¿Por qué esta página enlaza con otras del mismo tema?","acceptedAnswer":{"@type":"Answer","text":"Porque forma parte de un cluster SEO. Cada pieza ataca una intención distinta y, juntas, fortalecen la autoridad temática del sitio y mejoran la navegación del usuario."}},{"@type":"Question","name":"¿Qué debo revisar además de esta página?","acceptedAnswer":{"@type":"Answer","text":"Te conviene revisar la calculadora, la guía, la comparativa y el hub de mejor app para conductores para tener una visión más completa del tema."}},{"@type":"Question","name":"¿Esta guía sirve para nuevos conductores?","acceptedAnswer":{"@type":"Answer","text":"Sí. Está pensada tanto para personas que comienzan como para choferes con experiencia que buscan ordenar mejor costos, tiempos y estrategia."}},{"@type":"Question","name":"¿También aplica para otras apps?","acceptedAnswer":{"@type":"Answer","text":"Sí. Aunque cambien comisiones o incentivos, la lógica de revisar ingresos, gastos y rendimiento operativo sigue siendo útil para Uber, Didi, InDriver y opciones similares."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Mejor app para conductores","description":"Descubre mejor app para conductores con una guía clara para entender ingresos, costos, gasolina, comisiones y decisiones clave para conductores en México.","inLanguage":"es-MX","datePublished":"2026-01-01","dateModified":"2026-01-01","author":{"@type":"Organization","name":"Control Total Conductor"},"publisher":{"@type":"Organization","name":"Control Total Conductor"},"mainEntityOfPage":"https://calculadora-conductor.pages.dev/mejor-app-para-conductores-guia-17","image":"https://calculadora-conductor.pages.dev/og-images/mejor-app-para-conductores-guia-17.svg"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://calculadora-conductor.pages.dev/"},{"@type":"ListItem","position":2,"name":"📘 Guía","item":"https://calculadora-conductor.pages.dev/guia"},{"@type":"ListItem","position":3,"name":"Mejor app para conductores","item":"https://calculadora-conductor.pages.dev/mejor-app-para-conductores-guia-17"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Cómo entender Mejor app para conductores","step":[{"@type":"HowToStep","position":1,"text":"Anota ingresos y gastos todos los días"},{"@type":"HowToStep","position":2,"text":"Compara horarios rentables y horarios flojos"},{"@type":"HowToStep","position":3,"text":"Reduce kilómetros vacíos siempre que sea posible"},{"@type":"HowToStep","position":4,"text":"Mide uso real del vehículo por zona"},{"@type":"HowToStep","position":5,"text":"Revisa semanalmente tu ganancia neta y no solo el bruto"}]}</script>
+  <script>
+    var CALCULATOR_CONFIG = {"mode":"compare","title":"Calculadora comparativa App A vs App B","intro":"Esta versión compara dos opciones en paralelo para que veas cuál deja mejor margen estimado después de comisión y gastos directos.","buttonLabel":"Comparar escenarios","resultTitle":"Comparativa de resultados","platformA":"App A","platformB":"App B","fields":[{"id":"v1","label":"Ingreso bruto en App A","placeholder":"Ejemplo: 2100","min":"0","step":"0.01"},{"id":"v2","label":"Comisión de App A (%)","placeholder":"Ejemplo: 25","min":"0","step":"0.01"},{"id":"v3","label":"Gastos operativos en App A","placeholder":"Ejemplo: 420","min":"0","step":"0.01"},{"id":"v4","label":"Ingreso bruto en App B","placeholder":"Ejemplo: 1950","min":"0","step":"0.01"},{"id":"v5","label":"Comisión de App B (%)","placeholder":"Ejemplo: 18","min":"0","step":"0.01"},{"id":"v6","label":"Gastos operativos en App B","placeholder":"Ejemplo: 390","min":"0","step":"0.01"},{"id":"v7","label":"Horas trabajadas","placeholder":"Ejemplo: 8","min":"0","step":"0.01"}],"readingCards":[{"title":"Ganador real","text":"La mejor plataforma no siempre es la de menor comisión; importa cuánto deja neto después de operar."},{"title":"Neto por hora","text":"Comparar por hora ayuda a ver qué opción usa mejor tu tiempo y no solo tu kilometraje."},{"title":"Diferencia neta","text":"Un pequeño cambio porcentual en comisión puede no importar si la demanda y el ingreso bruto compensan."}]};
+    function getShareUrl(){
+      var canonical = document.querySelector('link[rel="canonical"]');
+      return canonical ? canonical.getAttribute('href') : window.location.href;
+    }
+    function getShareTitle(){
+      return document.title || 'Mejor app para conductores';
+    }
+    function shareSocial(network){
+      var url = encodeURIComponent(getShareUrl());
+      var title = encodeURIComponent(getShareTitle());
+      var shareLink = '';
+      if(network === 'whatsapp') shareLink = 'https://wa.me/?text=' + title + '%20' + url;
+      if(network === 'facebook') shareLink = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+      if(network === 'x') shareLink = 'https://twitter.com/intent/tweet?text=' + title + '&url=' + url;
+      if(network === 'telegram') shareLink = 'https://t.me/share/url?url=' + url + '&text=' + title;
+      if(shareLink){ window.open(shareLink, '_blank', 'noopener,noreferrer,width=720,height=640'); }
+    }
+    function copyShareLink(){
+      var shareUrl = getShareUrl();
+      var note = document.getElementById('share-note');
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(shareUrl).then(function(){
+          if(note) note.innerText = 'Enlace copiado correctamente.';
+        }).catch(function(){
+          if(note) note.innerText = 'No se pudo copiar automáticamente. Copia manualmente este enlace: ' + shareUrl;
+        });
+        return;
+      }
+      if(note) note.innerText = 'Copia manualmente este enlace: ' + shareUrl;
+    }
+    function numberFrom(id){
+      var el = document.getElementById(id);
+      return el ? (parseFloat(el.value) || 0) : 0;
+    }
+    function money(value){
+      return (value < 0 ? '-$' : '$') + Math.abs(value).toFixed(2);
+    }
+    function percent(value){
+      return value.toFixed(1) + '%';
+    }
+    function escapeHtmlJs(value){
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+    function renderCalculation(result){
+      var box = document.getElementById('resultado-container');
+      var heading = document.getElementById('result-heading');
+      var rows = document.getElementById('result-rows');
+      var stats = document.getElementById('result-stats');
+      var advice = document.getElementById('res-consejo');
+      if(!box || !heading || !rows || !stats || !advice) return;
+      heading.innerText = result.heading || 'Resultado estimado';
+      rows.innerHTML = (result.rows || []).map(function(item){
+        return '<tr><td>' + escapeHtmlJs(item.label) + '</td><td style="text-align:right">' + escapeHtmlJs(item.value) + '</td></tr>';
+      }).join('');
+      stats.innerHTML = (result.stats || []).map(function(item){
+        return '<div class="stat"><strong>' + escapeHtmlJs(item.value) + '</strong><span>' + escapeHtmlJs(item.label) + '</span></div>';
+      }).join('');
+      advice.innerText = result.advice || '';
+      box.style.display = 'block';
+    }
+    function calculateEarnings(){
+      var ingreso = numberFrom('v1');
+      var comisionPct = numberFrom('v2');
+      var gasolina = numberFrom('v3');
+      var mantenimiento = numberFrom('v4');
+      var kms = numberFrom('v5');
+      var horas = numberFrom('v6');
+      if(ingreso <= 0){ alert('Ingresa un monto válido en ingreso bruto diario.'); return null; }
+      var comision = ingreso * (comisionPct / 100);
+      var recibido = ingreso - comision;
+      var neto = recibido - gasolina - mantenimiento;
+      var porHora = horas > 0 ? neto / horas : 0;
+      var porKm = kms > 0 ? neto / kms : 0;
+      var margen = ingreso > 0 ? (neto / ingreso) * 100 : 0;
+      var consejo = neto < 0
+        ? 'Estás operando con pérdida. Revisa comisión, gasolina, mantenimiento y kilómetros vacíos.'
+        : margen < 20
+          ? 'Tu margen es bajo. Optimiza horarios, combustible y tiempos muertos.'
+          : margen < 40
+            ? 'Tu resultado es aceptable, pero todavía puedes mejorar rutas y selección de viajes.'
+            : 'Buen resultado. Tu margen luce saludable para una operación diaria bien controlada.';
+      return {
+        heading: CALCULATOR_CONFIG.resultTitle,
+        rows: [
+          { label: 'Ingreso bruto', value: money(ingreso) },
+          { label: 'Comisión plataforma', value: '-' + money(comision).replace('-$', '$') + ' (' + comisionPct.toFixed(1) + '%)' },
+          { label: 'Ingreso después de comisión', value: money(recibido) },
+          { label: 'Gasolina', value: '-' + money(gasolina).replace('-$', '$') },
+          { label: 'Mantenimiento', value: '-' + money(mantenimiento).replace('-$', '$') },
+          { label: 'Ganancia neta', value: money(neto) },
+        ],
+        stats: [
+          { label: 'Neto', value: money(neto) },
+          { label: 'Por hora', value: money(porHora) },
+          { label: 'Por km', value: money(porKm) },
+          { label: 'Margen', value: percent(margen) },
+        ],
+        advice: consejo,
+      };
+    }
+    function calculateTaxes(){
+      var ingresos = numberFrom('v1');
+      var gastos = numberFrom('v2');
+      var tasaIsr = numberFrom('v3');
+      var tasaIva = numberFrom('v4');
+      var retenciones = numberFrom('v5');
+      var ajustes = numberFrom('v6');
+      if(ingresos <= 0){ alert('Ingresa los ingresos del periodo para estimar impuestos.'); return null; }
+      var base = Math.max(ingresos - gastos, 0);
+      var isr = base * (tasaIsr / 100);
+      var iva = ingresos * (tasaIva / 100);
+      var total = Math.max(isr + iva + ajustes - retenciones, 0);
+      var neto = ingresos - gastos - total;
+      var tasaEfectiva = ingresos > 0 ? (total / ingresos) * 100 : 0;
+      var consejo = total > ingresos * 0.2
+        ? 'Tu carga fiscal estimada es alta. Revisa deducciones válidas, control documental y apartados periódicos.'
+        : 'El resultado estimado luce controlable, pero conviene validar tasas y deducciones con tu contador.';
+      return {
+        heading: CALCULATOR_CONFIG.resultTitle,
+        rows: [
+          { label: 'Ingresos del periodo', value: money(ingresos) },
+          { label: 'Gastos deducibles', value: '-' + money(gastos).replace('-$', '$') },
+          { label: 'Base gravable estimada', value: money(base) },
+          { label: 'ISR estimado', value: money(isr) },
+          { label: 'IVA estimado', value: money(iva) },
+          { label: 'Retenciones/pagos previos', value: '-' + money(retenciones).replace('-$', '$') },
+          { label: 'Otros ajustes', value: money(ajustes) },
+          { label: 'Impuesto total por apartar', value: money(total) },
+        ],
+        stats: [
+          { label: 'Total estimado', value: money(total) },
+          { label: 'Neto después de impuestos', value: money(neto) },
+          { label: 'Tasa efectiva', value: percent(tasaEfectiva) },
+          { label: 'Apartado semanal', value: money(total / 4.3) },
+        ],
+        advice: consejo,
+      };
+    }
+    function calculateFuel(){
+      var kms = numberFrom('v1');
+      var precioLitro = numberFrom('v2');
+      var rendimiento = numberFrom('v3');
+      var peajes = numberFrom('v4');
+      var extras = numberFrom('v5');
+      var viajes = numberFrom('v6');
+      if(kms <= 0 || precioLitro <= 0 || rendimiento <= 0){ alert('Ingresa kilómetros, precio por litro y rendimiento válidos.'); return null; }
+      var litros = kms / rendimiento;
+      var combustible = litros * precioLitro;
+      var total = combustible + peajes + extras;
+      var porKm = kms > 0 ? total / kms : 0;
+      var porViaje = viajes > 0 ? total / viajes : 0;
+      var consejo = porKm > 3.5
+        ? 'Tu costo por km es elevado. Revisa rendimiento, rutas, tráfico y conducción eficiente.'
+        : 'Tu costo por km luce razonable, pero compáralo entre zonas y tipos de jornada.';
+      return {
+        heading: CALCULATOR_CONFIG.resultTitle,
+        rows: [
+          { label: 'Kilómetros recorridos', value: kms.toFixed(2) + ' km' },
+          { label: 'Litros consumidos', value: litros.toFixed(2) + ' l' },
+          { label: 'Costo de combustible', value: money(combustible) },
+          { label: 'Peajes y estacionamientos', value: money(peajes) },
+          { label: 'Otros gastos variables', value: money(extras) },
+          { label: 'Costo total del recorrido', value: money(total) },
+        ],
+        stats: [
+          { label: 'Costo por km', value: money(porKm) },
+          { label: 'Costo por viaje', value: money(porViaje) },
+          { label: 'Combustible', value: money(combustible) },
+          { label: 'Litros usados', value: litros.toFixed(2) },
+        ],
+        advice: consejo,
+      };
+    }
+    function calculateCommission(){
+      var ingreso = numberFrom('v1');
+      var comisionPct = numberFrom('v2');
+      var bonos = numberFrom('v3');
+      var gastos = numberFrom('v4');
+      var viajes = numberFrom('v5');
+      var horas = numberFrom('v6');
+      if(ingreso <= 0){ alert('Ingresa el monto bruto generado para calcular la comisión real.'); return null; }
+      var comision = ingreso * (comisionPct / 100);
+      var recibido = ingreso - comision + bonos;
+      var neto = recibido - gastos;
+      var porViaje = viajes > 0 ? neto / viajes : 0;
+      var porHora = horas > 0 ? neto / horas : 0;
+      var margen = (ingreso + bonos) > 0 ? (neto / (ingreso + bonos)) * 100 : 0;
+      var consejo = comision > bonos
+        ? 'Tus bonos no compensan totalmente la comisión. Revisa si realmente conviene perseguir incentivos.'
+        : 'Tus bonos ayudan a amortiguar la comisión, pero el margen final sigue dependiendo de gastos y horas.';
+      return {
+        heading: CALCULATOR_CONFIG.resultTitle,
+        rows: [
+          { label: 'Ingreso bruto', value: money(ingreso) },
+          { label: 'Comisión descontada', value: money(comision) },
+          { label: 'Bonos y propinas', value: money(bonos) },
+          { label: 'Ingreso después de comisión', value: money(recibido) },
+          { label: 'Gastos operativos', value: '-' + money(gastos).replace('-$', '$') },
+          { label: 'Neto final', value: money(neto) },
+        ],
+        stats: [
+          { label: 'Neto', value: money(neto) },
+          { label: 'Por viaje', value: money(porViaje) },
+          { label: 'Por hora', value: money(porHora) },
+          { label: 'Margen', value: percent(margen) },
+        ],
+        advice: consejo,
+      };
+    }
+    function calculateHourly(){
+      var ingresoPico = numberFrom('v1');
+      var horasPico = numberFrom('v2');
+      var ingresoFlojo = numberFrom('v3');
+      var horasFlojo = numberFrom('v4');
+      var gastos = numberFrom('v5');
+      var bonos = numberFrom('v6');
+      var totalIngreso = ingresoPico + ingresoFlojo + bonos;
+      var totalHoras = horasPico + horasFlojo;
+      if(totalIngreso <= 0 || totalHoras <= 0){ alert('Ingresa montos y horas válidos para comparar horarios.'); return null; }
+      var neto = totalIngreso - gastos;
+      var rendimientoPico = horasPico > 0 ? ingresoPico / horasPico : 0;
+      var rendimientoFlojo = horasFlojo > 0 ? ingresoFlojo / horasFlojo : 0;
+      var diferencia = rendimientoPico - rendimientoFlojo;
+      var consejo = diferencia > 0
+        ? 'Tus horas pico rinden mejor. Conviene concentrar más tiempo en ese bloque y recortar horas flojas.'
+        : 'Tu horario flojo no está tan castigado, pero aún conviene revisar zonas, espera y viajes encadenados.';
+      return {
+        heading: CALCULATOR_CONFIG.resultTitle,
+        rows: [
+          { label: 'Ingreso en horas pico', value: money(ingresoPico) },
+          { label: 'Ingreso en horario flojo', value: money(ingresoFlojo) },
+          { label: 'Bonos e incentivos', value: money(bonos) },
+          { label: 'Ingreso total', value: money(totalIngreso) },
+          { label: 'Gastos del día', value: '-' + money(gastos).replace('-$', '$') },
+          { label: 'Neto del día', value: money(neto) },
+        ],
+        stats: [
+          { label: 'Pico por hora', value: money(rendimientoPico) },
+          { label: 'Flojo por hora', value: money(rendimientoFlojo) },
+          { label: 'Neto final', value: money(neto) },
+          { label: 'Diferencia/hora', value: money(diferencia) },
+        ],
+        advice: consejo,
+      };
+    }
+    function calculateCompare(){
+      var ingresoA = numberFrom('v1');
+      var comisionA = numberFrom('v2');
+      var gastosA = numberFrom('v3');
+      var ingresoB = numberFrom('v4');
+      var comisionB = numberFrom('v5');
+      var gastosB = numberFrom('v6');
+      var horas = numberFrom('v7');
+      if(ingresoA <= 0 || ingresoB <= 0){ alert('Ingresa montos válidos para ambas plataformas.'); return null; }
+      var netoA = ingresoA - (ingresoA * (comisionA / 100)) - gastosA;
+      var netoB = ingresoB - (ingresoB * (comisionB / 100)) - gastosB;
+      var porHoraA = horas > 0 ? netoA / horas : 0;
+      var porHoraB = horas > 0 ? netoB / horas : 0;
+      var diferencia = netoA - netoB;
+      var nombreA = (CALCULATOR_CONFIG && CALCULATOR_CONFIG.platformA) || 'App A';
+      var nombreB = (CALCULATOR_CONFIG && CALCULATOR_CONFIG.platformB) || 'App B';
+      var ganador = diferencia > 0 ? nombreA : diferencia < 0 ? nombreB : 'Empate técnico';
+      var consejo = ganador === 'Empate técnico'
+        ? 'Las dos opciones están muy parejas. Conviene decidir por demanda, zona y estabilidad de viajes.'
+        : 'La mejor opción estimada es ' + ganador + ', pero confirma el resultado con tus datos reales de demanda y tiempos muertos.';
+      return {
+        heading: CALCULATOR_CONFIG.resultTitle,
+        rows: [
+          { label: 'Neto estimado en ' + nombreA, value: money(netoA) },
+          { label: 'Neto estimado en ' + nombreB, value: money(netoB) },
+          { label: 'Diferencia neta', value: money(diferencia) },
+          { label: 'Ganador estimado', value: ganador },
+        ],
+        stats: [
+          { label: nombreA + ' por hora', value: money(porHoraA) },
+          { label: nombreB + ' por hora', value: money(porHoraB) },
+          { label: 'Mejor escenario', value: ganador },
+          { label: 'Ventaja neta', value: money(Math.abs(diferencia)) },
+        ],
+        advice: consejo,
+      };
+    }
+    function calculateIfPresent(){
+      if(!CALCULATOR_CONFIG || !document.getElementById('calculadora')) return;
+      try {
+        var result = null;
+        if(CALCULATOR_CONFIG.mode === 'taxes') result = calculateTaxes();
+        else if(CALCULATOR_CONFIG.mode === 'fuel') result = calculateFuel();
+        else if(CALCULATOR_CONFIG.mode === 'commission') result = calculateCommission();
+        else if(CALCULATOR_CONFIG.mode === 'hourly') result = calculateHourly();
+        else if(CALCULATOR_CONFIG.mode === 'compare') result = calculateCompare();
+        else result = calculateEarnings();
+        if(result) renderCalculation(result);
+      } catch (error) {
+        alert('No se pudo calcular: ' + error.message);
+      }
+    }
+    function calcular(){ calculateIfPresent(); }
+  </script>
+
+
+
+<!-- Global Footer - Auto Generated -->
+<footer style="background: #1f2937; color: white; margin-top: 4rem; padding: 2rem 0;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem; text-align: center;">
+        <div style="margin-bottom: 1rem;">
+            <a href="../../faq/index.html" style="color: #9ca3af; text-decoration: none;">FAQ - Preguntas Frecuentes</a> &nbsp;|&nbsp; <a href="../../privacidad/index.html" style="color: #9ca3af; text-decoration: none;">Política de Privacidad</a> &nbsp;|&nbsp; <a href="../../cookies/index.html" style="color: #9ca3af; text-decoration: none;">Política de Cookies</a> &nbsp;|&nbsp; <a href="../../terminos/index.html" style="color: #9ca3af; text-decoration: none;">Términos y Condiciones</a>
+        </div>
+        <p style="color: #9ca3af; font-size: 0.875rem;">© 2025 Control Total Conductor. Todos los derechos reservados.</p>
+    </div>
+</footer>
+<!-- End Global Footer -->
+
+</body>
+</html>
