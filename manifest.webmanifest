@@ -1,9 +1,0 @@
-{
-  "name": "Control Total Conductor",
-  "short_name": "CTC",
-  "start_url": "/",
-  "scope": "/",
-  "display": "standalone",
-  "theme_color": "#2563eb",
-  "background_color": "#f5f7fb"
-}
