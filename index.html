@@ -36,7 +36,145 @@
   </div>
   <p>© 2026 Control Total Conductor</p></footer>
 </body></html>
+<script>
 
+// ===== LIMPIEZA =====
+function limpiarContenido() {
+  const patrones = [
+    "Si estás buscando",
+    "llegaste al lugar indicado",
+    "Juan en Guadalajara",
+    "Nissan Versa",
+    "Factores clave"
+  ];
+
+  document.querySelectorAll("p, li").forEach(el => {
+    patrones.forEach(p => {
+      if (el.innerText.includes(p)) {
+        el.remove();
+      }
+    });
+  });
+}
+
+// ===== DETECCIÓN =====
+function detectarTipoPagina() {
+  const url = window.location.pathname;
+
+  if (url.includes("ganancias")) return "ganancias";
+  if (url.includes("gasolina")) return "costos";
+  if (url.includes("viajes")) return "productividad";
+  if (url.includes("equilibrio")) return "rentabilidad";
+  if (url.includes("vs")) return "comparativa";
+
+  return "general";
+}
+
+// ===== INSIGHT =====
+function insertarInsight() {
+  const tipo = detectarTipoPagina();
+
+  const insights = {
+    ganancias: "Un conductor promedio en México gana entre $400 y $900 diarios.",
+    costos: "La gasolina puede representar hasta el 30% del ingreso.",
+    productividad: "Más viajes no siempre significa más ganancia.",
+    rentabilidad: "El punto de equilibrio define si realmente ganas.",
+    comparativa: "Elegir plataforma puede cambiar tu ingreso hasta 20%."
+  };
+
+  const calc = document.querySelector(".calc");
+
+  if (calc) {
+    const p = document.createElement("p");
+    p.innerText = insights[tipo] || "";
+    calc.appendChild(p);
+  }
+}
+
+// ===== CALCULADORA =====
+function initCalculadora() {
+  function calcular() {
+    let viajes = +document.getElementById("viajes")?.value || 0;
+    let tarifa = +document.getElementById("tarifa")?.value || 0;
+    let comision = (+document.getElementById("comision")?.value || 0) / 100;
+    let gasolina = +document.getElementById("gasolina")?.value || 0;
+
+    let bruto = viajes * tarifa;
+    let fee = bruto * comision;
+    let neto = bruto - fee - gasolina;
+
+    const res = document.getElementById("resultado");
+    if (res) res.innerText = "$" + neto.toFixed(2);
+  }
+
+  document.querySelectorAll("input").forEach(i => {
+    i.addEventListener("input", calcular);
+  });
+
+  calcular();
+}
+
+// ===== INTERLINKING =====
+function limpiarInterlinking() {
+  const links = document.querySelectorAll("a");
+  let count = 0;
+
+  links.forEach(link => {
+    if (link.href.includes("/calculadoras/")) {
+      count++;
+      if (count > 3) link.style.display = "none";
+    }
+  });
+}
+
+// ===== SEO =====
+function fixSEO() {
+  document.title = document.title
+    .replace(/-/g, " ")
+    .replace(/¡|!/g, "");
+
+  if (!document.querySelector('meta[name="description"]')) {
+    let meta = document.createElement("meta");
+    meta.name = "description";
+    meta.content = "Calcula tus ganancias como conductor en México fácilmente.";
+    document.head.appendChild(meta);
+  }
+}
+
+// ===== CANONICAL =====
+function aplicarCanonical() {
+  const url = window.location.pathname;
+
+  if (!url.includes("/calculadoras/")) {
+    const slug = url.split("/").filter(Boolean).pop();
+
+    if (slug) {
+      let link = document.createElement("link");
+      link.rel = "canonical";
+      link.href = "/calculadoras/" + slug + "/";
+
+      document.head.appendChild(link);
+
+      let meta = document.createElement("meta");
+      meta.name = "robots";
+      meta.content = "noindex, follow";
+
+      document.head.appendChild(meta);
+    }
+  }
+}
+
+// ===== INIT =====
+window.addEventListener("load", () => {
+  limpiarContenido();
+  insertarInsight();
+  initCalculadora();
+  limpiarInterlinking();
+  fixSEO();
+  aplicarCanonical();
+});
+
+</script>
 
 
 
