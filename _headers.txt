@@ -1,0 +1,25 @@
+/sitemap.xml
+  Content-Type: application/xml; charset=utf-8
+
+/sitemap-calculadoras.xml
+  Content-Type: application/xml; charset=utf-8
+
+/sitemap-guias.xml
+  Content-Type: application/xml; charset=utf-8
+
+/sitemap-comparativas.xml
+  Content-Type: application/xml; charset=utf-8
+
+/sitemap-hubs.xml
+  Content-Type: application/xml; charset=utf-8
+
+/sitemap-paginas.xml
+  Content-Type: application/xml; charset=utf-8
+
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
