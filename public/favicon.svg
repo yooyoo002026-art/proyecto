@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="ng" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316"/>
+      <stop offset="100%" style="stop-color:#ea580c"/>
+    </linearGradient>
+    <filter id="gl">
+      <feGaussianBlur stdDeviation="0.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Fondo redondeado -->
+  <rect width="32" height="32" rx="7" fill="#1a1a22"/>
+  <rect width="32" height="32" rx="7" fill="none" stroke="#f97316" stroke-width="1" opacity="0.5"/>
+
+  <!-- Arco base del velocímetro -->
+  <path d="M 5 24 A 11 11 0 0 1 27 24" fill="none" stroke="#2e2e3e" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Arco progreso naranja -->
+  <path d="M 5 24 A 11 11 0 0 1 21 12" fill="none" stroke="url(#ng)" stroke-width="3" stroke-linecap="round" filter="url(#gl)"/>
+
+  <!-- Aguja -->
+  <line x1="16" y1="24" x2="22" y2="11" stroke="#f97316" stroke-width="2" stroke-linecap="round" filter="url(#gl)"/>
+
+  <!-- Centro -->
+  <circle cx="16" cy="24" r="2.5" fill="#f97316"/>
+  <circle cx="16" cy="24" r="1.2" fill="#1a1a22"/>
+</svg>

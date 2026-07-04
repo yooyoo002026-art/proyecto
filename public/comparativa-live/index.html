@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uber vs DiDi vs InDrive: Comparativa en tiempo real | Control Total Conductor</title>
+  <meta name="description" content="Compara Uber, DiDi e InDrive en tiempo real con deslizadores interactivos. Ve cuál plataforma te paga más según tu ciudad, tarifa y horas de trabajo.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Control Total Conductor">
+  <meta name="google-site-verification" content="3jCOwcbfm2nfdLT6biy4xLW9QOa6FeFfUxffo9aKUS0">
+  <link rel="canonical" href="https://calculadora-conductor.pages.dev/comparativa-live/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:title" content="Uber vs DiDi vs InDrive: Comparativa en tiempo real">
+  <meta property="og:description" content="Mueve los deslizadores y ve cuál plataforma te paga más en tiempo real. Gratis, sin registro.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calculadora-conductor.pages.dev/comparativa-live/">
+  <meta property="og:site_name" content="Control Total Conductor">
+  <meta property="og:locale" content="es_MX">
+
+  <style>
+    :root {
+      --negro: #0f0f12;
+      --carbon: #1a1a22;
+      --panel: #22222e;
+      --borde: #2e2e3e;
+      --texto: #e8e8f0;
+      --muted: #8888a8;
+      --uber: #000000;
+      --uber-txt: #ffffff;
+      --didi: #ff6900;
+      --indrive: #00c853;
+      --naranja: #f97316;
+      --azul: #3b82f6;
+      --acento: #6366f1;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--negro); color: var(--texto); line-height: 1.6; min-height: 100vh; }
+
+    nav { background: var(--carbon); border-bottom: 1px solid var(--borde); padding: 14px 24px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-right: auto; }
+    .nav-logo svg { width: 28px; height: 28px; }
+    .nav-logo span { font-weight: 700; font-size: .95rem; color: var(--texto); }
+    .nav-logo .sub { color: var(--naranja); font-size: .72rem; font-weight: 600; letter-spacing: .08em; }
+    nav a { color: var(--muted); text-decoration: none; font-size: .88rem; transition: color .2s; }
+    nav a:hover { color: var(--texto); }
+    nav a.activo { color: var(--naranja); }
+
+    .hero { background: linear-gradient(135deg, var(--carbon) 0%, #1a1a2e 100%); border-bottom: 1px solid var(--borde); padding: 40px 24px 32px; text-align: center; }
+    .hero-badge { display: inline-block; background: rgba(249,115,22,.12); border: 1px solid rgba(249,115,22,.3); color: #fdba74; font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 4px 14px; border-radius: 20px; margin-bottom: 14px; }
+    .hero h1 { font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 800; line-height: 1.2; margin-bottom: 10px; }
+    .hero h1 span { color: var(--naranja); }
+    .hero p { color: var(--muted); font-size: .95rem; max-width: 520px; margin: 0 auto; }
+
+    .contenido { max-width: 900px; margin: 0 auto; padding: 32px 20px 80px; }
+
+    /* CONTROLES DESLIZADORES */
+    .controles { background: var(--panel); border: 1px solid var(--borde); border-radius: 14px; padding: 28px; margin-bottom: 28px; }
+    .controles h2 { font-size: .8rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 20px; }
+
+    .slider-grupo { margin-bottom: 20px; }
+    .slider-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+    .slider-header label { font-size: .88rem; color: var(--texto); font-weight: 500; }
+    .slider-val { font-size: 1rem; font-weight: 700; color: var(--naranja); min-width: 80px; text-align: right; }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 5px;
+      background: var(--borde);
+      border-radius: 3px;
+      outline: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--naranja);
+      cursor: pointer;
+      box-shadow: 0 0 8px rgba(249,115,22,.4);
+      transition: box-shadow .2s;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover { box-shadow: 0 0 14px rgba(249,115,22,.7); }
+
+    .grid-sliders { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media(max-width:600px) { .grid-sliders { grid-template-columns: 1fr; } }
+
+    /* TARJETAS DE PLATAFORMA */
+    .plataformas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 28px; }
+    @media(max-width:600px) { .plataformas { grid-template-columns: 1fr; } }
+
+    .plat-card {
+      background: var(--panel);
+      border: 2px solid var(--borde);
+      border-radius: 14px;
+      padding: 22px 18px;
+      text-align: center;
+      transition: border-color .3s, transform .2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .plat-card.ganador { border-color: var(--naranja); transform: translateY(-4px); }
+    .plat-card.ganador::before {
+      content: '🏆 MEJOR OPCIÓN';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      background: var(--naranja);
+      color: #fff;
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      padding: 4px;
+      text-align: center;
+    }
+    .plat-nombre { font-size: 1rem; font-weight: 700; margin-bottom: 4px; margin-top: 8px; }
+    .plat-com { font-size: .75rem; color: var(--muted); margin-bottom: 16px; }
+    .plat-neto-dia { font-size: 1.8rem; font-weight: 800; color: var(--naranja); line-height: 1; }
+    .plat-label-dia { font-size: .72rem; color: var(--muted); margin-bottom: 12px; }
+    .plat-neto-mes { font-size: 1rem; font-weight: 600; color: var(--texto); }
+    .plat-label-mes { font-size: .72rem; color: var(--muted); }
+
+    /* BARRAS COMPARATIVAS */
+    .barras { background: var(--panel); border: 1px solid var(--borde); border-radius: 14px; padding: 24px; margin-bottom: 24px; }
+    .barras h2 { font-size: .8rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 20px; }
+
+    .barra-item { margin-bottom: 18px; }
+    .barra-header { display: flex; justify-content: space-between; font-size: .88rem; margin-bottom: 6px; }
+    .barra-nombre { color: var(--texto); font-weight: 500; }
+    .barra-valor { color: var(--texto); font-weight: 700; }
+    .barra-track { height: 10px; background: var(--borde); border-radius: 5px; overflow: hidden; }
+    .barra-fill { height: 100%; border-radius: 5px; transition: width .6s cubic-bezier(.4,0,.2,1); }
+    .fill-uber { background: linear-gradient(90deg, #555, #888); }
+    .fill-didi { background: linear-gradient(90deg, #cc5500, #ff6900); }
+    .fill-indrive { background: linear-gradient(90deg, #008c3a, #00c853); }
+
+    /* TABLA DETALLE */
+    .detalle { background: var(--panel); border: 1px solid var(--borde); border-radius: 14px; padding: 24px; margin-bottom: 24px; overflow-x: auto; }
+    .detalle h2 { font-size: .8rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
+    table { width: 100%; border-collapse: collapse; font-size: .88rem; min-width: 480px; }
+    th { background: var(--carbon); color: var(--muted); font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--borde); }
+    td { padding: 11px 14px; border-bottom: 1px solid var(--borde); color: var(--texto); }
+    tr:last-child td { border-bottom: none; }
+    .td-uber { color: #aaa; }
+    .td-didi { color: #ff8533; }
+    .td-indrive { color: #00c853; }
+    .td-mejor { font-weight: 700; }
+
+    /* INSIGHT */
+    .insight { background: rgba(249,115,22,.08); border: 1px solid rgba(249,115,22,.2); border-radius: 12px; padding: 18px 20px; margin-bottom: 24px; display: flex; gap: 12px; align-items: flex-start; }
+    .insight-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .insight-txt { font-size: .9rem; color: var(--texto); line-height: 1.6; }
+    .insight-txt strong { color: var(--naranja); }
+
+    .btn-diagnostico-link {
+      display: block;
+      text-align: center;
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      color: #fff;
+      text-decoration: none;
+      padding: 16px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 24px;
+      transition: opacity .2s;
+    }
+    .btn-diagnostico-link:hover { opacity: .9; }
+
+    .cta-app { background: linear-gradient(135deg, var(--carbon), #1a1a2e); border: 1px solid var(--borde); border-radius: 14px; padding: 28px; text-align: center; }
+    .cta-app p { color: var(--muted); margin-bottom: 14px; font-size: .9rem; }
+    .cta-app a { display: inline-block; background: linear-gradient(135deg, var(--acento), var(--azul)); color: #fff; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; }
+
+    footer { background: var(--carbon); border-top: 1px solid var(--borde); color: var(--muted); padding: 24px; font-size: .82rem; text-align: center; line-height: 2; }
+    footer nav { display: flex; justify-content: center; gap: 20px; margin: 8px 0; background: transparent; padding: 0; border: none; }
+    footer nav a { color: var(--muted); text-decoration: none; font-size: .82rem; }
+    footer nav a:hover { color: var(--texto); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="https://calculadora-conductor.pages.dev/">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <rect width="32" height="32" rx="7" fill="#1a1a22"/>
+      <rect width="32" height="32" rx="7" fill="none" stroke="#f97316" stroke-width="1" opacity="0.5"/>
+      <path d="M 5 24 A 11 11 0 0 1 27 24" fill="none" stroke="#2e2e3e" stroke-width="3" stroke-linecap="round"/>
+      <path d="M 5 24 A 11 11 0 0 1 21 12" fill="none" stroke="#f97316" stroke-width="3" stroke-linecap="round"/>
+      <line x1="16" y1="24" x2="22" y2="11" stroke="#f97316" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="16" cy="24" r="2.5" fill="#f97316"/>
+      <circle cx="16" cy="24" r="1.2" fill="#1a1a22"/>
+    </svg>
+    <div>
+      <span>Control Total</span><br>
+      <span class="sub">CONDUCTOR</span>
+    </div>
+  </a>
+  <a href="https://calculadora-conductor.pages.dev/calculadoras/">Calculadoras</a>
+  <a href="https://calculadora-conductor.pages.dev/diagnostico/">Diagnóstico</a>
+  <a href="https://calculadora-conductor.pages.dev/comparativa-live/" class="activo">Comparativa Live</a>
+  <a href="https://calculadora-conductor.pages.dev/guias/">Guías</a>
+  <a href="https://calculadora-conductor.pages.dev/hubs/">Hubs</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">⚡ Tiempo real</div>
+  <h1>Uber vs DiDi vs InDrive<br><span>¿Cuál te paga más?</span></h1>
+  <p>Mueve los deslizadores y ve los resultados actualizarse al instante. Sin cálculos manuales.</p>
+</div>
+
+<div class="contenido">
+
+  <!-- CONTROLES -->
+  <div class="controles">
+    <h2>Ajusta tus condiciones de trabajo</h2>
+    <div class="grid-sliders">
+      <div class="slider-grupo">
+        <div class="slider-header">
+          <label>Viajes al día</label>
+          <span class="slider-val" id="val-viajes">15</span>
+        </div>
+        <input type="range" id="sl-viajes" min="5" max="35" value="15" oninput="actualizar()">
+      </div>
+      <div class="slider-grupo">
+        <div class="slider-header">
+          <label>Tarifa promedio por viaje</label>
+          <span class="slider-val" id="val-tarifa">$65</span>
+        </div>
+        <input type="range" id="sl-tarifa" min="30" max="200" value="65" oninput="actualizar()">
+      </div>
+      <div class="slider-grupo">
+        <div class="slider-header">
+          <label>Días trabajados al mes</label>
+          <span class="slider-val" id="val-dias">22</span>
+        </div>
+        <input type="range" id="sl-dias" min="5" max="30" value="22" oninput="actualizar()">
+      </div>
+      <div class="slider-grupo">
+        <div class="slider-header">
+          <label>Gasto de gasolina al día</label>
+          <span class="slider-val" id="val-gasolina">$180</span>
+        </div>
+        <input type="range" id="sl-gasolina" min="50" max="400" value="180" oninput="actualizar()">
+      </div>
+    </div>
+  </div>
+
+  <!-- TARJETAS DE PLATAFORMA -->
+  <div class="plataformas" id="plataformas"></div>
+
+  <!-- INSIGHT -->
+  <div class="insight" id="insight">
+    <span class="insight-icon">💡</span>
+    <span class="insight-txt" id="insight-txt">Ajusta los deslizadores para ver el análisis personalizado.</span>
+  </div>
+
+  <!-- BARRAS COMPARATIVAS -->
+  <div class="barras">
+    <h2>Ganancia neta diaria comparada</h2>
+    <div id="barras-contenido"></div>
+  </div>
+
+  <!-- TABLA DETALLE -->
+  <div class="detalle">
+    <h2>Desglose completo</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Concepto</th>
+          <th class="td-uber">Uber</th>
+          <th class="td-didi">DiDi</th>
+          <th class="td-indrive">InDrive</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-body"></tbody>
+    </table>
+  </div>
+
+  <!-- CTA DIAGNÓSTICO -->
+  <a class="btn-diagnostico-link" href="https://calculadora-conductor.pages.dev/diagnostico/">
+    🔍 Ver mi diagnóstico financiero completo — incluye gastos, punto de equilibrio y recomendaciones
+  </a>
+
+  <div class="cta-app">
+    <p>🔥 Más de 1,379 conductores en lista de espera de la app</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScWlK9OJ0X5y0yKI0ZXIMJsLc8lsPyCjlfU8yRBy4n8pK0o0Q/viewform?usp=header" target="_blank" rel="noopener">Regístrate gratis — App Control Total Conductor</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>Este sitio es independiente y no tiene relación oficial con Uber, DiDi, InDrive ni ninguna plataforma de transporte.</p>
+  <p>Las herramientas proporcionan estimaciones aproximadas con fines informativos. No constituyen asesoría financiera profesional.</p>
+  <nav>
+    <a href="https://calculadora-conductor.pages.dev/about/">About</a>
+    <a href="https://calculadora-conductor.pages.dev/contact/">Contact</a>
+    <a href="https://calculadora-conductor.pages.dev/legal/">Legal</a>
+    <a href="https://calculadora-conductor.pages.dev/faq/">FAQ</a>
+  </nav>
+  <p>© 2026 Control Total Conductor</p>
+</footer>
+
+<script>
+const f = n => '$' + Math.round(n).toLocaleString('es-MX');
+
+const PLATS = [
+  { id: 'uber',    nombre: 'Uber',    com: 0.27, mult: 1.00, viajes_mult: 1.00, color: 'fill-uber',    txtClass: 'td-uber'    },
+  { id: 'didi',    nombre: 'DiDi',    com: 0.23, mult: 0.95, viajes_mult: 0.95, color: 'fill-didi',    txtClass: 'td-didi'    },
+  { id: 'indrive', nombre: 'InDrive', com: 0.18, mult: 1.10, viajes_mult: 0.80, color: 'fill-indrive', txtClass: 'td-indrive' },
+];
+
+function calcPlat(p, viajes, tarifa, dias, gasDia) {
+  const vj     = Math.round(viajes * p.viajes_mult);
+  const tAdj   = tarifa * p.mult;
+  const brutoD = vj * tAdj;
+  const comD   = brutoD * p.com;
+  const netoD  = brutoD - comD - gasDia;
+  const netoM  = netoD * dias;
+  const brutoM = brutoD * dias;
+  const comM   = comD * dias;
+  const gasM   = gasDia * dias;
+  return { vj, tAdj, brutoD, comD, netoD, netoM, brutoM, comM, gasM };
+}
+
+function actualizar() {
+  const viajes  = +document.getElementById('sl-viajes').value;
+  const tarifa  = +document.getElementById('sl-tarifa').value;
+  const dias    = +document.getElementById('sl-dias').value;
+  const gasDia  = +document.getElementById('sl-gasolina').value;
+
+  // Actualizar labels
+  document.getElementById('val-viajes').textContent  = viajes;
+  document.getElementById('val-tarifa').textContent  = '$' + tarifa;
+  document.getElementById('val-dias').textContent    = dias;
+  document.getElementById('val-gasolina').textContent = '$' + gasDia;
+
+  const resultados = PLATS.map(p => ({ ...p, ...calcPlat(p, viajes, tarifa, dias, gasDia) }));
+  const maxNeto    = Math.max(...resultados.map(r => r.netoD));
+  const mejor      = resultados.reduce((a, b) => a.netoM > b.netoM ? a : b);
+  const peor       = resultados.reduce((a, b) => a.netoM < b.netoM ? a : b);
+  const diferencia = mejor.netoM - peor.netoM;
+
+  // Tarjetas
+  document.getElementById('plataformas').innerHTML = resultados.map(r => `
+    <div class="plat-card ${r.id === mejor.id ? 'ganador' : ''}">
+      <div class="plat-nombre">${r.nombre}</div>
+      <div class="plat-com">Comisión ${Math.round(r.com * 100)}% · ${r.vj} viajes/día</div>
+      <div class="plat-neto-dia">${f(r.netoD)}</div>
+      <div class="plat-label-dia">neto por día</div>
+      <div class="plat-neto-mes">${f(r.netoM)}</div>
+      <div class="plat-label-mes">neto al mes (${dias} días)</div>
+    </div>`).join('');
+
+  // Insight
+  const insightTxt = mejor.netoM > 0
+    ? `<strong>${mejor.nombre}</strong> te da <strong>${f(diferencia)} más al mes</strong> que ${peor.nombre} con tus condiciones actuales. ${mejor.id === 'indrive' ? 'InDrive gana por su comisión más baja aunque tiene menos viajes.' : mejor.id === 'didi' ? 'DiDi equilibra bien comisión y volumen de viajes.' : 'Uber compensa su mayor comisión con mayor volumen de viajes disponibles.'} Considera activar las tres apps para aprovechar lo mejor de cada una.`
+    : `Con estos parámetros los números están muy ajustados. Intenta aumentar los viajes diarios o la tarifa promedio para mejorar la rentabilidad.`;
+  document.getElementById('insight-txt').innerHTML = insightTxt;
+
+  // Barras
+  document.getElementById('barras-contenido').innerHTML = resultados.map(r => `
+    <div class="barra-item">
+      <div class="barra-header">
+        <span class="barra-nombre">${r.nombre}</span>
+        <span class="barra-valor">${f(r.netoD)}/día</span>
+      </div>
+      <div class="barra-track">
+        <div class="barra-fill ${r.color}" style="width:${maxNeto > 0 ? Math.max(4, r.netoD / maxNeto * 100) : 4}%"></div>
+      </div>
+    </div>`).join('');
+
+  // Tabla
+  const filas = [
+    ['Tarifa por viaje (ajustada)', ...resultados.map(r => f(r.tAdj))],
+    ['Viajes por día', ...resultados.map(r => r.vj)],
+    ['Ingreso bruto diario', ...resultados.map(r => f(r.brutoD))],
+    ['Comisión de la plataforma', ...resultados.map(r => `−${f(r.comD)}`)],
+    ['Gasolina diaria', ...resultados.map(() => `−${f(gasDia)}`)],
+    ['Neto diario', ...resultados.map(r => f(r.netoD))],
+    ['Neto mensual (' + dias + ' días)', ...resultados.map(r => f(r.netoM))],
+    ['Comisión mensual total', ...resultados.map(r => `−${f(r.comM)}`)],
+    ['Gasolina mensual total', ...resultados.map(() => `−${f(gasDia * dias)}`)],
+  ];
+
+  const clases = ['td-uber', 'td-didi', 'td-indrive'];
+  document.getElementById('tabla-body').innerHTML = filas.map((fila, fi) => {
+    const esNeto = fi === 5 || fi === 6;
+    return `<tr>${fila.map((cel, ci) => {
+      if (ci === 0) return `<td>${cel}</td>`;
+      const esMejor = esNeto && resultados[ci - 1].id === mejor.id;
+      return `<td class="${clases[ci-1]}${esMejor ? ' td-mejor' : ''}">${cel}${esMejor ? ' 🏆' : ''}</td>`;
+    }).join('')}</tr>`;
+  }).join('');
+}
+
+// Inicializar al cargar
+actualizar();
+</script>
+
+</body>
+</html>
