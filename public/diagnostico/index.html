@@ -873,8 +873,32 @@ function cargarDatos() {
   } catch(e) {}
 }
 
-// Cargar datos al abrir la página
-window.addEventListener('DOMContentLoaded', cargarDatos);
+// ── LEER DATOS DESDE OTRA CALCULADORA (vía URL) ──────────────────────────────
+function cargarDesdeURL() {
+  const params = new URLSearchParams(window.location.search);
+  if ([...params].length === 0) return false;
+
+  let algunCambio = false;
+  params.forEach((valor, clave) => {
+    const el = document.getElementById(clave);
+    if (el && valor) { el.value = valor; algunCambio = true; }
+  });
+
+  if (algunCambio) {
+    const aviso = document.createElement('div');
+    aviso.style.cssText = 'max-width:860px;margin:0 auto 16px;padding:12px 20px;background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.3);border-radius:10px;color:#fdba74;font-size:.88rem;text-align:center';
+    aviso.textContent = '✅ Trajimos tus datos de la calculadora anterior — revisa y completa lo que falte';
+    const contenido = document.querySelector('.contenido');
+    if (contenido) contenido.insertBefore(aviso, contenido.firstChild);
+  }
+  return algunCambio;
+}
+
+// Cargar datos al abrir la página — prioridad: URL > localStorage
+window.addEventListener('DOMContentLoaded', () => {
+  const vinoDeOtraPagina = cargarDesdeURL();
+  if (!vinoDeOtraPagina) cargarDatos();
+});
 </script>
 
 </body>
