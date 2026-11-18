@@ -87,7 +87,7 @@ footer nav a{color:#aaa;text-decoration:none}
 <nav class="breadcrumb" aria-label="breadcrumb">
   <a href="https://calculadora-conductor.pages.dev/">Inicio</a> › <span>Metodología</span>
 </nav>
-<p class="fecha">📅 Actualizado: septiembre 2026</p>
+<p class="fecha">📅 Actualizado: noviembre 2026</p>
 
 <main>
   <h1>Metodología: cómo calculamos los datos</h1>
@@ -96,10 +96,10 @@ footer nav a{color:#aaa;text-decoration:none}
   <h2>1. Comisiones de las plataformas</h2>
   <div class="fuente-box">
     <h3>Fuente</h3>
-    <p>Los porcentajes de comisión se basan en rangos reportados públicamente por conductores activos en foros, grupos de Facebook y comunidades de conductores en México, contrastados con la información general que las propias plataformas publican sobre su modelo de comisión.</p>
+    <p>Los porcentajes por defecto son supuestos de simulación, construidos a partir de comentarios de conductores en foros y grupos de Facebook. No contamos con una muestra documentada ni con cifras oficiales de las plataformas. Abajo listamos un rango publicado por la prensa como referencia externa.</p>
   </div>
   <table>
-    <thead><tr><th>Plataforma</th><th>Rango usado</th><th>Valor por defecto en calculadoras</th></tr></thead>
+    <thead><tr><th>Plataforma</th><th>Rango de simulación (supuesto)</th><th>Valor por defecto en calculadoras</th></tr></thead>
     <tbody>
       <tr><td>Uber</td><td>25% – 30%</td><td>27%</td></tr>
       <tr><td>DiDi</td><td>20% – 25%</td><td>23%</td></tr>
@@ -148,9 +148,28 @@ footer nav a{color:#aaa;text-decoration:none}
     <p>Revisamos y ajustamos las cifras de referencia cada vez que detectamos cambios relevantes reportados por conductores o anuncios oficiales de las plataformas. La fecha de "última actualización" en cada página indica cuándo se revisó por última vez esa calculadora específica.</p>
   </div>
 
+  <h2>Referencia externa sobre comisiones</h2>
+  <div class="fuente-box">
+    <h3>Fuente consultada</h3>
+    <p>Expansión (26 feb 2026) reporta rangos de comisión de 10% a 30% para DiDi y de 9.9% a 12% para inDrive, a partir de un estudio presentado por inDrive, es decir, una fuente con interés propio. No encontramos una cifra oficial verificable para Uber. Nuestros valores por defecto (27% Uber, 23% DiDi, 18% InDrive) son supuestos editables; el de InDrive está por encima del rango que cita esa fuente, y podemos ajustarlo si aparece información mejor. <a href="https://expansion.mx/tecnologia/2026/02/26/indrive-reporta-ingresos-30-mayores-para-conductores" target="_blank" rel="noopener">Ver nota</a>.</p>
+  </div>
+
+  <h2>Definiciones: cómo usamos la palabra «neto»</h2>
+  <table>
+    <thead><tr><th>Término</th><th>Cómo se calcula</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Ganancia bruta</strong></td><td>Viajes × tarifa promedio, antes de descontar nada</td></tr>
+      <tr><td><strong>Ganancia neta</strong></td><td>Bruta − comisión de la plataforma − gasolina</td></tr>
+      <tr><td><strong>Utilidad neta real</strong></td><td>Ganancia neta − mantenimiento (y seguro o depreciación cuando el Diagnóstico los incluye)</td></tr>
+      <tr><td><strong>Neto libre</strong> (Diagnóstico)</td><td>Utilidad neta real − tus gastos de vida mensuales</td></tr>
+    </tbody>
+  </table>
+  <p>Los ejemplos de cada calculadora indican cuál de estos términos usan. Las tablas por ciudad aplican los multiplicadores de la sección 2; los ejemplos parten de la tarifa base (Guadalajara).</p>
+
   <h2>Lo que estas calculadoras NO son</h2>
   <ul>
     <li><strong>No son datos oficiales de Uber, DiDi o InDrive.</strong> Ninguna plataforma publica sus comisiones exactas por ciudad de forma pública y verificable.</li>
+    <li><strong>No descuentan impuestos (ISR, IVA ni retenciones).</strong> Las retenciones dependen de tu situación fiscal; consulta la página oficial de tu plataforma y al SAT.</li>
     <li><strong>No son asesoría financiera, legal o fiscal profesional.</strong> Son herramientas de estimación para ayudarte a planear, no sustitutos de un contador o abogado laboral.</li>
     <li><strong>No garantizan el resultado exacto que obtendrás.</strong> Tu ganancia real depende de decenas de variables que cambian día a día: demanda, clima, eventos, tu calificación, la hora del día y más.</li>
   </ul>
@@ -162,7 +181,7 @@ footer nav a{color:#aaa;text-decoration:none}
   <p>Si notas que alguna cifra de referencia ya no corresponde a la realidad del mercado, escríbenos a través de la página de <a href="https://calculadora-conductor.pages.dev/contact/">contacto</a>. Cada corrección que recibimos mejora la precisión de las calculadoras para todos los conductores que las usan.</p>
 
   <div class="cta-app">
-    <p>🔥 Más de 1,379 conductores ya están en lista de espera</p>
+    <p style="color:#f97316;font-weight:700;font-size:1.05rem;margin-bottom:14px">🔥 Lista de espera abierta: sé de los primeros en probar la app</p>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScWlK9OJ0X5y0yKI0ZXIMJsLc8lsPyCjlfU8yRBy4n8pK0o0Q/viewform?usp=header" target="_blank" rel="noopener">Regístrate gratis — App Control Total Conductor</a>
   </div>
 </main>

@@ -33,9 +33,9 @@
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"¿Qué es la PTU para conductores de plataformas digitales?","acceptedAnswer":{"@type":"Answer","text":"La PTU (Participación de los Trabajadores en las Utilidades) es el derecho a recibir una parte de las ganancias que la empresa generó el año anterior. Desde 2026, por primera vez, conductores y repartidores de Uber, DiDi, Rappi y plataformas similares tienen derecho a este pago tras la reforma a la Ley Federal del Trabajo que reconoce una relación laboral con derechos plenos, dejando atrás el esquema de socios independientes."}},
 {"@type":"Question","name":"¿Cuántas horas necesito trabajar para tener derecho a PTU?","acceptedAnswer":{"@type":"Answer","text":"Necesitas acumular al menos 288 horas efectivamente trabajadas en el año. El tiempo efectivo se cuenta desde que aceptas un viaje o pedido hasta que lo concluyes por completo — no se cuenta el tiempo de espera entre servicios. Trabajando de forma constante puedes alcanzar las 288 horas en aproximadamente dos meses."}},
-{"@type":"Question","name":"¿Cuánto tengo que ganar al mes para calificar?","acceptedAnswer":{"@type":"Answer","text":"Necesitas un ingreso neto mensual promedio equivalente al salario mínimo de la Ciudad de México, que en 2026 es de $315.04 pesos diarios, aproximadamente $9,451 pesos al mes. Si tu ingreso promedio mensual manejando apps supera ese monto y ya acumulaste las 288 horas del año, calificas para recibir PTU."}},
+{"@type":"Question","name":"¿Cuánto tengo que ganar al mes para calificar?","acceptedAnswer":{"@type":"Answer","text":"Necesitas un ingreso neto mensual promedio equivalente al salario mínimo de la Ciudad de México, que en 2026 es de $315.04 pesos diarios, aproximadamente $9,582 pesos al mes en la zona general (más en la franja fronteriza norte). Si tu ingreso promedio mensual manejando apps supera ese monto y ya acumulaste las 288 horas del año, calificas para recibir PTU."}},
 {"@type":"Question","name":"¿En qué fechas se paga la PTU 2026?","acceptedAnswer":{"@type":"Answer","text":"El periodo de pago de PTU 2026 para trabajadores de plataformas digitales va del 1 de abril al 30 de mayo. Si no recibiste tu pago en ese periodo y cumples los requisitos, puedes acudir a la Procuraduría Federal de la Defensa del Trabajo (Profedet) donde ofrecen asesoría y representación legal gratuita."}},
-{"@type":"Question","name":"¿Si ya tengo IMSS por mi cuenta afecta mi derecho a PTU?","acceptedAnswer":{"@type":"Answer","text":"No. El IMSS que la plataforma debe darte desde enero de 2026 es independiente del derecho a PTU. Son dos beneficios distintos de la misma reforma laboral: la afiliación al IMSS es obligatoria para todos los conductores activos, mientras que la PTU depende de que cumplas las 288 horas anuales y el umbral de ingreso mínimo."}},
+{"@type":"Question","name":"¿Si ya tengo IMSS por mi cuenta afecta mi derecho a PTU?","acceptedAnswer":{"@type":"Answer","text":"No. El IMSS que la plataforma debe darte desde enero de 2026 es independiente del derecho a PTU. Son dos beneficios distintos de la misma reforma laboral: la cobertura completa depende de tu ingreso neto mensual (según reportes de prensa de jul 2026; confírmalo en el IMSS), mientras que la PTU depende de que cumplas las 288 horas anuales y el umbral de ingreso mínimo."}},
 {"@type":"Question","name":"¿Sigo pagando impuestos como actividad empresarial o cambió con la reforma laboral?","acceptedAnswer":{"@type":"Answer","text":"Sigue igual. El SAT confirmó mediante el criterio normativo 59/ISR/IVA/N que aunque la reforma laboral reconozca a los conductores como trabajadores subordinados con derecho a PTU e IMSS, fiscalmente continúan tributando como actividad empresarial conforme al artículo 113-A de la LISR. No hay cambios en ISR ni IVA por esta reforma."}},
 {"@type":"Question","name":"¿Cómo reclamo mi PTU si la plataforma no me pagó?","acceptedAnswer":{"@type":"Answer","text":"Si trabajaste más de 288 horas en el año, cumples el umbral de ingreso mínimo y no recibiste tu pago correspondiente, puedes acudir a la Profedet (Procuraduría Federal de la Defensa del Trabajo) donde te dan asesoría y representación legal gratuita. Tienes un año de plazo para reclamar tu derecho a partir del día siguiente a la fecha límite de pago del 30 de mayo."}}
 ]}
@@ -147,7 +147,7 @@ footer nav a{color:#aaa;text-decoration:none}
   <a href="https://calculadora-conductor.pages.dev/calculadoras/">Calculadoras</a> ›
   <span>PTU Conductor Plataformas Digitales México</span>
 </nav>
-<p class="fecha">📅 Actualizado: julio 2026</p>
+<p class="fecha">📅 Actualizado: noviembre 2026</p>
 
 <main>
   <h1>¿Ya tengo derecho a PTU manejando Uber o DiDi? Calculadora 2026</h1>
@@ -164,6 +164,10 @@ footer nav a{color:#aaa;text-decoration:none}
     <label for="ingreso_mensual">Tu ingreso neto promedio al mes (MXN)</label>
     <input type="number" id="ingreso_mensual" value="9000" min="0" max="50000">
     <span style="color:#8888a8;font-size:.78rem">Lo que realmente te queda, después de gastos</span>
+
+    <label for="zona">¿Dónde trabajas?</label>
+    <select id="zona"><option value="general">Zona general del país</option><option value="frontera">Franja fronteriza norte</option></select>
+    <span style="color:#8888a8;font-size:.78rem">El salario mínimo es mayor en la franja fronteriza norte</span>
 
     <button class="calc-btn" onclick="calcularPTU()">Calcular si tengo derecho a PTU</button>
 
@@ -203,24 +207,24 @@ footer nav a{color:#aaa;text-decoration:none}
     <thead><tr><th>Requisito</th><th>Monto exacto 2026</th><th>Cómo se calcula</th></tr></thead>
     <tbody>
       <tr><td><strong>Horas trabajadas al año</strong></td><td>288 horas efectivas</td><td>Desde que aceptas el viaje hasta que lo concluyes — no cuenta el tiempo de espera</td></tr>
-      <tr><td><strong>Ingreso mínimo mensual</strong></td><td>$9,451.20 MXN aprox.</td><td>Equivalente al salario mínimo general de $315.04 pesos diarios en 2026</td></tr>
+      <tr><td><strong>Ingreso mínimo mensual</strong></td><td>$9,582.47 MXN (zona general) · $13,409.80 MXN (franja fronteriza norte)</td><td>Equivalente al salario mínimo general de $315.04 pesos diarios en 2026</td></tr>
     </tbody>
   </table>
-  <p class="nota" style="font-size:.82rem;color:#888;margin-top:-14px">* Salario mínimo general 2026 según CONASAMI: $315.04 pesos diarios × 30 días.</p>
+  <p class="nota" style="font-size:.82rem;color:#888;margin-top:-14px">* Salario mínimo general 2026: $315.04 pesos diarios (CONASAMI). Equivalente mensual de referencia: $9,582.47 (365 días ÷ 12), cifra publicada por Ámbito (30 jul 2026); la franja fronteriza norte tiene un mínimo mayor. Verifica el monto vigente en CONASAMI.</p>
 
   <h2>Fechas clave que debes conocer</h2>
   <ul>
     <li><strong>1 de abril al 30 de mayo de 2026:</strong> periodo oficial de pago de PTU para trabajadores de plataformas digitales.</li>
     <li><strong>1 año de plazo:</strong> tienes hasta un año a partir del día siguiente al 30 de mayo para reclamar tu PTU si no te la pagaron y cumples los requisitos.</li>
-    <li><strong>Desde enero de 2026:</strong> las plataformas están obligadas a afiliarte al IMSS con todas las prestaciones de ley — esto es independiente del derecho a PTU.</li>
+    <li><strong>Desde enero de 2026:</strong> las plataformas deben afiliar a sus conductores al IMSS; el alcance de la cobertura puede depender de tu ingreso, confírmalo en el IMSS. Es independiente del derecho a PTU.</li>
   </ul>
 
   <h2>Preguntas frecuentes</h2>
   <details><summary>¿Qué es la PTU para conductores de plataformas digitales?</summary><p>La PTU (Participación de los Trabajadores en las Utilidades) es el derecho a recibir una parte de las ganancias que la empresa generó el año anterior. Desde 2026, por primera vez, conductores y repartidores de Uber, DiDi, Rappi y plataformas similares tienen derecho a este pago tras la reforma a la Ley Federal del Trabajo que reconoce una relación laboral con derechos plenos, dejando atrás el esquema de socios independientes.</p></details>
   <details><summary>¿Cuántas horas necesito trabajar para tener derecho a PTU?</summary><p>Necesitas acumular al menos 288 horas efectivamente trabajadas en el año. El tiempo efectivo se cuenta desde que aceptas un viaje o pedido hasta que lo concluyes por completo — no se cuenta el tiempo de espera entre servicios. Trabajando de forma constante puedes alcanzar las 288 horas en aproximadamente dos meses.</p></details>
-  <details><summary>¿Cuánto tengo que ganar al mes para calificar?</summary><p>Necesitas un ingreso neto mensual promedio equivalente al salario mínimo de la Ciudad de México, que en 2026 es de $315.04 pesos diarios, aproximadamente $9,451 pesos al mes. Si tu ingreso promedio mensual manejando apps supera ese monto y ya acumulaste las 288 horas del año, calificas para recibir PTU.</p></details>
+  <details><summary>¿Cuánto tengo que ganar al mes para calificar?</summary><p>Necesitas un ingreso neto mensual promedio equivalente al salario mínimo de la Ciudad de México, que en 2026 es de $315.04 pesos diarios, aproximadamente $9,582 pesos al mes en la zona general (más en la franja fronteriza norte). Si tu ingreso promedio mensual manejando apps supera ese monto y ya acumulaste las 288 horas del año, calificas para recibir PTU.</p></details>
   <details><summary>¿En qué fechas se paga la PTU 2026?</summary><p>El periodo de pago de PTU 2026 para trabajadores de plataformas digitales va del 1 de abril al 30 de mayo. Si no recibiste tu pago en ese periodo y cumples los requisitos, puedes acudir a la Profedet donde ofrecen asesoría y representación legal gratuita.</p></details>
-  <details><summary>¿Si ya tengo IMSS por mi cuenta afecta mi derecho a PTU?</summary><p>No. El IMSS que la plataforma debe darte desde enero de 2026 es independiente del derecho a PTU. Son dos beneficios distintos de la misma reforma laboral: la afiliación al IMSS es obligatoria para todos los conductores activos, mientras que la PTU depende de que cumplas las 288 horas anuales y el umbral de ingreso mínimo.</p></details>
+  <details><summary>¿Si ya tengo IMSS por mi cuenta afecta mi derecho a PTU?</summary><p>No. El IMSS que la plataforma debe darte desde enero de 2026 es independiente del derecho a PTU. Son dos beneficios distintos de la misma reforma laboral: la cobertura completa depende de tu ingreso neto mensual (según reportes de prensa de jul 2026; confírmalo en el IMSS), mientras que la PTU depende de que cumplas las 288 horas anuales y el umbral de ingreso mínimo.</p></details>
   <details><summary>¿Sigo pagando impuestos como actividad empresarial o cambió con la reforma laboral?</summary><p>Sigue igual. El SAT confirmó mediante el criterio normativo 59/ISR/IVA/N que aunque la reforma laboral reconozca a los conductores como trabajadores subordinados con derecho a PTU e IMSS, fiscalmente continúan tributando como actividad empresarial conforme al artículo 113-A de la LISR. No hay cambios en ISR ni IVA por esta reforma.</p></details>
   <details><summary>¿Cómo reclamo mi PTU si la plataforma no me pagó?</summary><p>Si trabajaste más de 288 horas en el año, cumples el umbral de ingreso mínimo y no recibiste tu pago correspondiente, puedes acudir a la Profedet (Procuraduría Federal de la Defensa del Trabajo) donde te dan asesoría y representación legal gratuita. Tienes un año de plazo para reclamar tu derecho a partir del día siguiente a la fecha límite de pago del 30 de mayo.</p></details>
 
@@ -228,7 +232,7 @@ footer nav a{color:#aaa;text-decoration:none}
   <p>La reforma laboral de plataformas digitales es el cambio más importante para conductores en México en años. Conocer si cumples los requisitos de PTU e IMSS te permite exigir lo que ya es tuyo por ley. Usa esta calculadora para saber dónde estás parado y consulta a la Profedet si necesitas ayuda para reclamar tu derecho.</p>
 
   <div class="cta-app">
-    <p>🔥 Más de 1,379 conductores ya están en lista de espera</p>
+    <p style="color:#f97316;font-weight:700;font-size:1.05rem;margin-bottom:14px">🔥 Lista de espera abierta: sé de los primeros en probar la app</p>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScWlK9OJ0X5y0yKI0ZXIMJsLc8lsPyCjlfU8yRBy4n8pK0o0Q/viewform?usp=header" target="_blank" rel="noopener">Regístrate gratis — App Control Total Conductor</a>
   </div>
 
@@ -255,7 +259,7 @@ footer nav a{color:#aaa;text-decoration:none}
 </footer>
 
 <script>
-const SALARIO_MIN_MENSUAL = 9451.20;
+const SALARIOS = { general: 9582.47, frontera: 13409.80 };
 
 function calcularPTU() {
   const horasSemana = +document.getElementById('horas_semana').value || 0;
@@ -265,6 +269,8 @@ function calcularPTU() {
   const horasAcumuladas = horasSemana * semanas;
   const faltanHoras = Math.max(0, 288 - horasAcumuladas);
   const cumpleHoras = horasAcumuladas >= 288;
+  const zona = document.getElementById('zona').value;
+  const SALARIO_MIN_MENSUAL = SALARIOS[zona];
   const cumpleIngreso = ingreso >= SALARIO_MIN_MENSUAL;
   const porcentaje = Math.min(100, (horasAcumuladas / 288) * 100);
 
@@ -313,7 +319,7 @@ function calcularPTU() {
       <div class="veredicto no-ingreso">
         <div class="icono">⚠️</div>
         <div class="titulo">Cumples las horas, pero no el ingreso mínimo</div>
-        <div class="sub">Ya acumulaste las 288 horas, pero tu ingreso promedio está por debajo del salario mínimo mensual ($9,451 MXN aprox.).</div>
+        <div class="sub">Ya acumulaste las 288 horas, pero tu ingreso promedio está por debajo del salario mínimo mensual ($${Math.round(SALARIO_MIN_MENSUAL).toLocaleString('es-MX')} MXN aprox.).</div>
       </div>`;
     pasosHTML = `
       <h3>📋 Siguientes pasos</h3>
